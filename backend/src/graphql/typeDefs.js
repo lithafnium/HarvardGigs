@@ -10,7 +10,9 @@ module.exports = gql`
   type Mutations {
     addGig(input: AddGigInput):Gig!
     deleteGig(id:ID!)
-    createUser(input:CreateUserInput!):User!
+    # createUser(input:CreateUserInput!):User!
+    login(email:String!, password:String!): AuthReturn!
+    register(input: RegisterInput!): AuthReturn!
   }
 
   type User {
@@ -20,7 +22,7 @@ module.exports = gql`
     email: String!
     phoneNumber: String
     createdAt: String!
-    # password: String!
+    password: String!
   }
 
   type CreateUserInput {
@@ -45,13 +47,13 @@ module.exports = gql`
     price: Int!
   }
 
-  # type AuthReturn {
-  #   token: String!
-  #   user: User!
-  # }
+  type AuthReturn {
+    token: String!
+    user: User!
+  }
 
-  # input RegisterInput {
-  #   email: String!
-  #   password: String!
-  # }
+  input RegisterInput {
+    email: String!
+    password: String!
+  }
 `

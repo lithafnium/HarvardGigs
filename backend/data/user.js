@@ -1,7 +1,7 @@
 const casual = require('casual')
 
 // 'password' hashed with bcrypt scheme
-// const password = '$2a$10$rQEY9CNl4OC.UtiyRgKnZeW0KaWnEANMKAxfIpNDQCgiCybm3G1fy'
+const password = '$2a$10$rQEY9CNl4OC.UtiyRgKnZeW0KaWnEANMKAxfIpNDQCgiCybm3G1fy'
 
 casual.define('user', () => ({
   id: casual.uuid,
@@ -9,8 +9,8 @@ casual.define('user', () => ({
   lastName: casual.last_name,
   email: casual.email,
   phoneNumber: casual.phone,
-  created_at: casual.moment,
-// password,
+  createdAt: casual.moment,
+  password,
 }))
 
 

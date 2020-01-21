@@ -8,9 +8,9 @@ exports.up = async knex => createTableIfNotExists(knex, 'gigs', table => {
     .defaultTo(knex.raw('uuid_generate_v4()'))
 
   table
-    .uuid('ownerId')
+    .uuid('userId')
+    .references('users.id')
     .notNullable()
-    .references('userId')
 
   table
     .string('title').notNullable
