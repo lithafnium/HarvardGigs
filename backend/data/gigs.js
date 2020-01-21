@@ -3,21 +3,20 @@ const casual = require('casual')
 // 'password' hashed with bcrypt scheme
 // const password = '$2a$10$rQEY9CNl4OC.UtiyRgKnZeW0KaWnEANMKAxfIpNDQCgiCybm3G1fy'
 
-casual.define('user', () => ({
+casual.define('gigs', () => ({
   id: casual.uuid,
-  firstName: casual.first_name,
-  lastName: casual.last_name,
-  email: casual.email,
-  phoneNumber: casual.phone,
+  userId: casual.uuid,
+  title: casual.title,
+  photo: casual.url,
+  price: casual.integer(from = 0, to = 1000),
   created_at: casual.moment,
 // password,
 }))
 
-
-const userData = []
+const gigsData = []
 
 for (let i = 0; i < 20; ++i) {
-  userData.push(casual.user)
+  userData.push(casual.gigs)
 }
 
-module.exports = userData
+module.exports = gigsData
