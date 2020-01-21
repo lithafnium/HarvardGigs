@@ -2,14 +2,16 @@ const { gql } = require('apollo-server-express')
 
 module.exports = gql`
   type Query {
-    searchGigs(topic:String!):[Gig!]
-    searchGigs(userId:ID!):[Gig!]
-    searchGig(input: String!):[Gig!]
+    searchGigsTopic(topic:String!):[Gig!]
+    searchUser(id:ID!):User!
+    searchGigsInput(input: String!):[Gig!]
+    searchGigsPrice(price: Int!): [Gig!]
+
   }
 
-  type Mutations {
-    addGig(input: AddGigInput):Gig!
-    deleteGig(id:ID!)
+  type Mutation {
+    addGig(input: AddGigInput!): Gig!
+    deleteGig(id:ID!): Gig!
     # createUser(input:CreateUserInput!):User!
     login(email:String!, password:String!): AuthReturn!
     register(input: RegisterInput!): AuthReturn!
@@ -38,10 +40,10 @@ module.exports = gql`
     title: String!
     photo: String!
     price: Int!
-    createdAt: Date!
+    createdAt: String!
   }
 
-  type AddGigInput {
+  input AddGigInput {
     title: String!
     photo: String!
     price: Int!
