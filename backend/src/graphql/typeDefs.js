@@ -4,6 +4,7 @@ module.exports = gql`
   type Query {
     searchGigsTopic(topic:String!):[Gig!]
     searchUser(id:ID!):User!
+    searchUsername(name:String!):[User!]
     searchGigsInput(input: String!):[Gig!]
     searchGigsPrice(price: Int!): [Gig!]
 
@@ -40,7 +41,19 @@ module.exports = gql`
     title: String!
     photo: String!
     price: Int!
+    topic: TaskStateEnum!
     createdAt: String!
+  }
+
+  enum TaskStateEnum {
+    Furniture
+    Tech
+    Entertainment
+    Clothing
+    Beauty
+    Music
+    Social
+    Academic
   }
 
   input AddGigInput {
