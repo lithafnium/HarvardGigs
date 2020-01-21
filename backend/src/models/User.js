@@ -10,7 +10,7 @@ class User extends BaseModel {
   
    return {
      gig: {
-       relation: this.BelongsToOneRelation,
+       relation: BelongsToOneRelation,
        modelClass: Gig,
        join: {
          from: 'users.id',
