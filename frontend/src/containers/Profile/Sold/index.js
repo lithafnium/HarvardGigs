@@ -1,20 +1,23 @@
 import React from 'react'
 import {
-  Container, Card, ItemContainer, Title,
+  Container, ItemContainer, Title,
 } from './styles'
+import PGigItem from '../ProfileGigItem'
 
 
 const Selling = () => (
   <Container>
-    <Title>Sold!</Title>
+    <Title>Currently Selling</Title>
     <ItemContainer>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <PGigItem />
+      <PGigItem />
+      <PGigItem />
+      <PGigItem />
+      <PGigItem />
+      <PGigItem />
+      <PGigItem />
+      <PGigItem />
+      <PGigItem />
     </ItemContainer>
   </Container>
 )

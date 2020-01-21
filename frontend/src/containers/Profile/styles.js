@@ -15,7 +15,7 @@ export const Container = styled.div`
 
 export const ItemsContainer = styled.div`
     width: 1000px;
-    height: 700px;
+    height: 900px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
