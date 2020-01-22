@@ -17,7 +17,7 @@ export const Font = styled.div`
 `
 
 
-export const Link = styled(NavLink)`
+export const NavbarLink = styled.a`
 	 padding: 30px 30px 30px 30px; 
 	 font-size: 1.2rem; 
 	 color: #eeeeee;
@@ -58,7 +58,6 @@ export const SignupButton = styled.button`
     color: white;
 	background-color: #581845; 
 	/*border: 2px solid white;*/
-    margin-left: 25px; 
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	cursor: pointer;
 
