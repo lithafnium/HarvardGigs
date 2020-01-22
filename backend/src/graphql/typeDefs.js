@@ -54,7 +54,6 @@ module.exports = gql`
     Music
     Social
     Academic
-    Housing
   }
 
   input AddGigInput {
