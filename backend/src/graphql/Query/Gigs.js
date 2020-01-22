@@ -11,15 +11,16 @@ const gigPrice = async (obj, {input}, {user}) => {
   }
 
 
-const gigTopic = async (obj, { user }) => {
-    console.log(user)
-    const t = await Gig.query().findById(id)
+
+
+const gigTopic = async (obj, {topic}) => {
+    const t = await Gig.query().where("topic", `${topic}`)
     return t
   }
 
 
-const gigInput = async () => {
-    const i = await Gig.query().findById(id)
+const gigTitle = async (obj, {title}) => {
+    const i = await Gig.query().where("title", "like", `%${title}%`)
     return i
 
 }
@@ -31,7 +32,7 @@ const resolver = {
   Query: {
     searchGigsPrice: gigPrice,
     searchGigsTopic: gigTopic,
-    searchGigsInput: gigInput
+    searchGigsInput: gigTitle
   },
 
   
