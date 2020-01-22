@@ -1,8 +1,9 @@
 const Gig = require('../../models/Gig')
 
 
-const gigPrice = async () => {
-    const p = await Gig.query().findById(id)
+const gigPrice = async (obj, args, { user }) => {
+  console.log(user)
+    const p = await Gig.query().findById(user.id)
     return p
   }
 
@@ -20,6 +21,8 @@ const gigInput = async () => {
 }
 
 
+
+
 const resolver = {
   Query: {
     searchGigsPrice: gigPrice,
@@ -34,3 +37,4 @@ const resolver = {
 }
 
 module.exports = resolver
+
