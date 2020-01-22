@@ -60,6 +60,7 @@ module.exports = gql`
     title: String!
     photo: String!
     price: Int!
+    userId: ID!
   }
 
   type AuthReturn {

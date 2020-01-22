@@ -7,6 +7,7 @@ const addGig = async(obj, {input}) => {
         const newGig = await Gig.query().insertGraph(input); 
         return newGig; 
     } catch(err){
+        console.log(err); 
         throw new Error(`Could not create new Gig with input: ${JSON.stringify(input)}`)
     }
 }
