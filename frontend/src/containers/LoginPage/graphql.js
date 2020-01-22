@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 
-const LOGIN = gql`
+export const LOGIN = gql`
     mutation login($email: String!, $password:String!) {
         login(email:$email, password:$password) {
             token
@@ -11,4 +11,12 @@ const LOGIN = gql`
         }
     }
 `
-export default LOGIN
+export const TESTQUERY = gql`
+query searchGigsPrice($input:RangeInput!) {
+  searchGigsPrice(input: $input) {
+    price
+    title
+  }
+}
+`
+//export default LOGIN

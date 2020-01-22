@@ -10,23 +10,23 @@ import Dashboard from './containers/Dashboard'
 import Login from './containers/LoginPage'
 import Register from './containers/RegisterPage'
 
-
 const App = () => (
   <Router>
     <ThemeProvider theme={theme}>
       <ApolloProvider client={client}>
         <div className="App">
           <Switch>
-            <Route path="/home" component={Home} />
             <Route path="/profile" component={Profile} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route path="/" component={Home} />
           </Switch>
         </div>
       </ApolloProvider>
     </ThemeProvider>
   </Router>
+
 )
 
 export default App

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Link } from './styles'
+import { Link, Container, LoginContainer, Input, Title, Font } from './styles'
 import { SignupButton } from '../Home/styles'
-import { useMutation } from '@apollo/react-hooks'
-import LOGIN from './graphql.js'
+import { useMutation, useLazyQuery } from '@apollo/react-hooks'
+import { LOGIN, TESTQUERY} from './graphql.js'
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -14,23 +14,28 @@ const Login = () => {
         },
         onCompleted: ({ login: { token } }) => localStorage.setItem('token', token), 
     })
+    const [searchPrice] = useLazyQuery(TESTQUERY, {
+        variables: {
+            "input": { "high": 1000, "low": 150 }
+        }
+    })
 
     return (
-        <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            margin: '20px 0',
-            width: 300,
-        }}
-        >
-            <input placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
-            <input placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
-            <button type="button" onClick={login}> Login </button>
-            <p>Need to make an account?</p>
-            <Link to="/register">
-                <SignupButton>Signup</SignupButton>
-            </Link>
-        </div>
+        <Container>  
+            <Font>
+            <LoginContainer>
+                <Title>Login</Title>
+                <Input placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
+                <Input placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
+                <button type="button" onClick={login}> Login </button>
+                <button type="button" onClick={searchPrice}>Welcome!</button>
+                <p>Need to make an account?</p>
+                <Link to="/register">
+                    <SignupButton>Signup</SignupButton>
+                </Link>
+            </LoginContainer>
+            </Font> 
+        </Container>
 
     )
 }
