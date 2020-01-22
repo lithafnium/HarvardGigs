@@ -6,7 +6,7 @@ module.exports = gql`
     searchUser(id:ID!):User!
     searchUsername(name:String!):[User!]
     searchEmail(email:String!):[User!]
-    searchGigsInput(input: String!):[Gig!]
+    searchGigsInput(title:String!):[Gig!]
     searchGigsPrice(input: RangeInput!): [Gig!]
   }
 
