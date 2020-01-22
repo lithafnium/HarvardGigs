@@ -11,6 +11,7 @@ const SideNav = ({ navOpen, setNavOpen }) => (
   <div>
     <SideNavContainer id="sidenav" navOpen={navOpen}>
       <CloseButton navOpen={navOpen} setNavOpen={setNavOpen} />
+      <h1 style = {{margin: "30px"}}>Name</h1>
       <NavList>
         <NavListItem>
           <Link to="/">Home</Link>

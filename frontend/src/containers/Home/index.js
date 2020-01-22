@@ -8,11 +8,11 @@ import { Font, Main } from './styles'
 
 const Home = () => (
   <Font>
-    <Main>
+    <Main id = "home">
       <Navbar />
       <Tagline />
     </Main>
-    <About />
+    <About/>
     <Team />
   </Font>
 )

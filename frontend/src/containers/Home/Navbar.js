@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {Link, Nav, NavbarContaier, Brand, SignupButton} from './styles'
+import {NavbarLink, Nav, NavbarContaier, Brand, SignupButton} from './styles'
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const Navbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,13 +12,31 @@ const Navbar = (props) => {
         <Nav>
             <Brand>YardSale</Brand>
             <div className = "menu">
-                <Link to="/home">Home</Link>
-                <Link to="/home">About</Link>
-                <Link to="/home">Team</Link>
-                <Link to="/home">Contact</Link>
-                <Link to="/login">
+                <NavbarLink>
+                    <Link to="team"
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}>Home</Link>
+                </NavbarLink>
+                <NavbarLink>
+                    <Link to="about"
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}>About</Link>
+                </NavbarLink>
+                <NavbarLink>
+                    <Link to="team"
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}>Team</Link>
+                </NavbarLink>
+                <NavbarLink to="/home">Contact</NavbarLink>
+                <NavbarLink to="/login">
                   <SignupButton>Login</SignupButton>
-                </Link>
+                </NavbarLink>
             </div>
       </Nav>
     </NavbarContaier>

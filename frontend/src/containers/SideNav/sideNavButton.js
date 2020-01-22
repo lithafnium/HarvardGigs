@@ -1,13 +1,15 @@
 /* eslint-disable linebreak-style */
 import React from 'react'
-import { NavCloseButton, NavOpenButton } from './styles'
+import { NavCloseButton, NavOpenButton, Bar } from './styles'
 
 
 export const SideNavButton = ({ navOpen, setNavOpen }) => (
   <div>
+    
     <NavOpenButton type="button" onClick={() => setNavOpen(true)} navOpen={navOpen}>
-      &#9776;
-
+      <Bar></Bar>
+      <Bar></Bar>
+      <Bar></Bar>
     </NavOpenButton>
   </div>
 )

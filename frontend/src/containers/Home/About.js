@@ -6,6 +6,7 @@ import {HomeContainer, Cards, VideoImage, HomeInner, AboutImage} from './styles'
 const About = () => {
     
     return(
+        <div  id = "about">
         <HomeContainer>
             <HomeInner>
             
@@ -26,6 +27,7 @@ const About = () => {
             </HomeInner>
 
         </HomeContainer>
+        </div>
     ); 
 
 }

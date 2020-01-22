@@ -2,23 +2,29 @@ import React from 'react'
 import FilterBar from './filterbar'
 import Search from './search'
 import Gigs from './gigs'
-import { Container, RightContainer, navOpenButton } from './styles'
+import { Container, RightContainer, navOpenButton, Font } from './styles'
 import SideNavDiv from './sidenavdiv'
 
 
 const Dashboard = () => (
-  <div>
-    <SideNavDiv />
+  <Font>
+    <Container style = {{alignItems: "center",
+                        paddingBottom: "0px", 
+                        paddingTop: "20px"}}>
+      <SideNavDiv />
+      <h1>YardSale</h1>
+      <Search />
+    </Container>
+
     <Container>
 
-      <FilterBar />
       <RightContainer>
-        <Search />
-        <Gigs />
+        <FilterBar />
+          <Gigs />
       </RightContainer>
 
     </Container>
-  </div>
+  </Font>
 )
 
 

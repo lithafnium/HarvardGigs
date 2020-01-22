@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   FilterDiv, FilterList, FilterListItem, FilterHeading, CategoryList,
+  CategoryContainer, Checkmark, CategoryItem
 } from './styles'
 
 const FilterBar = () => (
@@ -9,13 +10,44 @@ const FilterBar = () => (
 
     <FilterHeading>CATEGORIES</FilterHeading>
     <CategoryList>
-      <li>Academic</li>
-      <li>Social</li>
+      <li> 
+        <CategoryContainer >
+          <input type="checkbox" checked="checked"></input>
+            <Checkmark ></Checkmark>
+            <CategoryItem>Academic</CategoryItem>
+        </CategoryContainer>
+      </li>
+      <li>
+      <CategoryContainer >
+          <input type="checkbox" checked="checked"></input>
+            <Checkmark ></Checkmark>
+            <CategoryItem>Social</CategoryItem>
+        </CategoryContainer>
+
+
+      </li>
     </CategoryList>
+    <hr style = {{border: "1.5px solid",
+                            borderColor:"#900C3F",
+                            width: "200px"}}/>
     <FilterHeading>FILTER</FilterHeading>
     <FilterList>
-      <FilterListItem>Price</FilterListItem>
-      <FilterListItem>User</FilterListItem>
+    <li> 
+        <CategoryContainer >
+          <input type="checkbox" checked="checked"></input>
+            <Checkmark ></Checkmark>
+            <CategoryItem>Price</CategoryItem>
+        </CategoryContainer>
+      </li>
+      <li>
+      <CategoryContainer >
+          <input type="checkbox" checked="checked"></input>
+            <Checkmark ></Checkmark>
+            <CategoryItem>User</CategoryItem>
+        </CategoryContainer>
+
+
+      </li>
     </FilterList>
   </FilterDiv>
 )

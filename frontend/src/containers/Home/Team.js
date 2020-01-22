@@ -4,7 +4,7 @@ import Person from './Person'
 
 const Team = () => {
     return(
-        <div>
+        <div id = "team">
             <TeamContainer style = {{}}>
                 <h1 style = {{color: "rgb(199, 0, 57)", 
                               fontSize: "3rem",
