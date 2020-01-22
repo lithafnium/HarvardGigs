@@ -4,17 +4,21 @@ import styled from 'styled-components';
 export const Delete = styled.button`
     display: none;
     width:175px;
-    height:200px;
-    background-color: lightgray;
-    color: darkgray;
+    height:60px;
+    background-color: #900c3f;
+    color: white;
     position: absolute;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
 
 `
 
 export const GigItemDiv = styled.div`
     width: 200px;
     height: 275px;
-    background-color: #fff5f7;
+    background-color: white;
     display:flex;
     justify-content:center;
     flex-direction:column;
@@ -25,10 +29,11 @@ export const GigItemDiv = styled.div`
     position: relative;
     &:hover{
         cursor:pointer;
-
         ${Delete} {
             display: block;
         }
+        background-color: #858585
+
     }
 `
 export const GigImg = styled.img`

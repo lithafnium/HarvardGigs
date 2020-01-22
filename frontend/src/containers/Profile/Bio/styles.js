@@ -4,15 +4,20 @@ import genericProfilePic from './genericProfilePic.jpeg';
 
 
 export const Container = styled.div`
-    width: 250px;
-    height: 300px;
+    width: 800px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    background-color: #900c3f;
+    justify-content: flex-start;
+    padding-top: 40px;
+    color: white;
 `
 export const ProfilePic = styled.div`
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%; /*don't forget prefixes*/
     background-image: url(${genericProfilePic});
     background-position: center center;
@@ -23,22 +28,39 @@ export const ProfilePic = styled.div`
 
 export const Name = styled.div`
     padding-top: 20px;
-    width: 200px;
     height: 50px;
     /*background-color: lightgrey;*/
     display: flex;
     justify-content: center;
-    font-size: 25px;
+    font-size: 50px;
 
 `
 export const Email = styled.div`
-    padding: 5px;
+    padding: 10px;
     width: 200px;
     height: 50px;
     /*background-color: lightgrey;*/
     display: flex;
     justify-content: center;
-    font-size: 15px;
+    font-size: 20px;
 
+`
+export const AddButton = styled.button`
+    width: 125px;
+    height: 60px;
+    background-color: white;
+    color: #900c3f;
+    display:flex;
+    margin-top: 8px;
+    border-radius: 5px;
+    &:hover{
+        cursor:pointer;
+        border-color: #570726;
+        border-width: 4px;
+        border-radius: 8px;
+
+    }
+    justify-content: center;
+    align-items: center;
 `
 

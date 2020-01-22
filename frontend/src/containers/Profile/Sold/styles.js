@@ -10,12 +10,6 @@ export const Container = styled.div`
     align-items: right;
     flex-direction: column;
 `
-export const Card = styled.div`
-    background-color: darkblue;
-    min-width: 200px;
-    margin: 5px;
-    height: 200px;
-`
 
 export const ItemContainer = styled.div`
     display: flex;
@@ -23,6 +17,11 @@ export const ItemContainer = styled.div`
     min-height: 350px;
     flex-direction: row;
     overflow-x: auto;
+    background-color: lightgray;
+    padding-top: 20px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 40px;
 `
 export const Title = styled.div`
     font-weight: bold;

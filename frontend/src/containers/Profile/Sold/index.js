@@ -7,7 +7,7 @@ import PGigItem from '../ProfileGigItem'
 
 const Selling = () => (
   <Container>
-    <Title>Currently Selling</Title>
+    <Title>Sold!</Title>
     <ItemContainer>
       <PGigItem />
       <PGigItem />

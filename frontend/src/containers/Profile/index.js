@@ -2,7 +2,7 @@ import React from 'react'
 import Bio from './Bio'
 import Selling from './Selling'
 import Sold from './Sold'
-import { Font, Container, ItemsContainer } from './styles'
+import { Font, Container, ItemsContainer, ProfileBackground, ProfileBContainer } from './styles'
 
 const Profile = () => (
   <Font>
