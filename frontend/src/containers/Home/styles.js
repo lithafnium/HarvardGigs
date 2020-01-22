@@ -1,4 +1,5 @@
 import styled from "styled-components"; 
+import { NavLink } from 'react-router-dom'
 
 // export const GlobalStyles = createGlobalStyle`
 //     @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');  
@@ -16,10 +17,11 @@ export const Font = styled.div`
 `
 
 
-export const NavLink = styled.a`
+export const Link = styled(NavLink)`
 	 padding: 30px 30px 30px 30px; 
 	 font-size: 1.2rem; 
 	 color: #eeeeee;
+	 text-decoration: none;
 `
 
 export const Nav = styled.div`
@@ -58,6 +60,7 @@ export const SignupButton = styled.button`
 	/*border: 2px solid white;*/
     margin-left: 25px; 
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	cursor: pointer;
 
 `
 export const Main = styled.div`
