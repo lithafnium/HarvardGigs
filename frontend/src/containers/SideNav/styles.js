@@ -55,16 +55,16 @@ export const NavOpenButton = styled.button`
     z-index:3; */
     width:25px;
     height:25px;
-    margin-right: 175px; 
+    margin-right: 50px;  
     
 `
 
 export const Bar = styled.p`
     width: 30px;
-  	height: 3px;
+  	height: 3.5px;
       border-radius: 5px; 
   	background-color: rgba(0, 0, 0, 0.7);
-  	margin: 6px 0;
+  	margin: 5px 0;
   	transition: 0.3s;
 
 

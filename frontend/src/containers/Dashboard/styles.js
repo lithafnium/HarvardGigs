@@ -7,7 +7,7 @@ export const Font = styled.div`
 
 
 export const Container = styled.div`
-    max-width: 1140px; 
+    max-width: 1440px; 
     display:flex;
     padding: 50px;
     

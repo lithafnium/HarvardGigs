@@ -27,6 +27,9 @@ const FilterBar = () => (
 
       </li>
     </CategoryList>
+    <hr style = {{border: "1.5px solid",
+                            borderColor:"#900C3F",
+                            width: "200px"}}/>
     <FilterHeading>FILTER</FilterHeading>
     <FilterList>
     <li> 

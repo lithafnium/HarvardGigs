@@ -9,8 +9,10 @@ import SideNavDiv from './sidenavdiv'
 const Dashboard = () => (
   <Font>
     <Container style = {{alignItems: "center",
-                        paddingBottom: "0px"}}>
+                        paddingBottom: "0px", 
+                        paddingTop: "20px"}}>
       <SideNavDiv />
+      <h1>YardSale</h1>
       <Search />
     </Container>
 
