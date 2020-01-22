@@ -1,9 +1,11 @@
 const Gig = require('../../models/Gig')
 
 
-const gigPrice = async (obj, args, { user }) => {
-  console.log(user)
-    const p = await Gig.query().findById(user.id)
+const gigPrice = async (obj, {input}) => {
+  console.log("hello")
+  console.log(input)
+    const p = await Gig.query().whereBetween("price", [input.low, input.high])
+    // .andWhere("price", ">", `${input.low}`)
     return p
   }
 
@@ -27,13 +29,15 @@ const resolver = {
   Query: {
     searchGigsPrice: gigPrice,
     searchGigsTopic: gigTopic,
-    searchGigInput: gigInput
+    searchGigsInput: gigInput
   },
-  Gig: {
-    price,
-    title,
-    topic,
-  },
+
+  
+  // Gig: {
+  //   price,
+  //   title,
+  //   topic,
+  // },
 }
 
 module.exports = resolver

@@ -1,4 +1,6 @@
 const BaseModel = require('./BaseModel')
+const { BelongsToOneRelation, HasManyRelation } = require('objection')
+
  
 class Gig extends BaseModel {
  static get tableName() {
