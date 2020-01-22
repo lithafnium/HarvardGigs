@@ -2,17 +2,24 @@ import React from 'react'
 import FilterBar from './filterbar'
 import Search from './search'
 import Gigs from './gigs'
-import {Container, RightContainer} from './styles'
+import { Container, RightContainer, navOpenButton } from './styles'
+import SideNavDiv from './sidenavdiv'
 
-const Dashboard = () => 
-<Container>
-    <FilterBar></FilterBar>
-    <RightContainer>
-        <Search></Search>
-        <Gigs></Gigs>
-    </RightContainer>
 
-</Container>
+const Dashboard = () => (
+  <div>
+    <SideNavDiv />
+    <Container>
+
+      <FilterBar />
+      <RightContainer>
+        <Search />
+        <Gigs />
+      </RightContainer>
+
+    </Container>
+  </div>
+)
 
 
 export default Dashboard
