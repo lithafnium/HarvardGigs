@@ -13,13 +13,16 @@ exports.up = async knex => createTableIfNotExists(knex, 'gigs', table => {
     .notNullable()
 
   table
-    .string('title').notNullable
+    .string('title').notNullable()
+  
+  table
+    .string('topic').notNullable()
 
   table
-    .string('photo').notNullable
+    .string('photo').notNullable()
 
   table
-    .string('price').notNullable
+    .integer('price').notNullable()
 
   table.timestamp('createdAt').defaultTo(knex.fn.now())
 
