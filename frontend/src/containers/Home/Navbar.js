@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import {NavLink, Nav, NavbarContaier, Brand, SignupButton} from './styles'
-
+import {Link, Nav, NavbarContaier, Brand, SignupButton} from './styles'
 
 const Navbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,13 +11,13 @@ const Navbar = (props) => {
         <Nav>
             <Brand>YardSale</Brand>
             <div className = "menu">
-            
-                <NavLink>Home</NavLink>
-                <NavLink>About</NavLink>
-                <NavLink>Team</NavLink>
-                <NavLink>Contact</NavLink>
-                <SignupButton>Signup</SignupButton>
-                
+                <Link to="/home">Home</Link>
+                <Link to="/home">About</Link>
+                <Link to="/home">Team</Link>
+                <Link to="/home">Contact</Link>
+                <Link to="/login">
+                  <SignupButton>Login</SignupButton>
+                </Link>
             </div>
       </Nav>
     </NavbarContaier>

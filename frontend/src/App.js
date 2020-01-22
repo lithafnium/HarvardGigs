@@ -5,6 +5,11 @@ import { ThemeProvider } from 'styled-components'
 import theme from './theme'
 import client from './client'
 import Home from './containers/Home'
+import Profile from './containers/Profile'
+import Dashboard from './containers/Dashboard'
+import Login from './containers/LoginPage'
+import Register from './containers/RegisterPage'
+
 
 const App = () => (
   <Router>
@@ -12,7 +17,11 @@ const App = () => (
       <ApolloProvider client={client}>
         <div className="App">
           <Switch>
-            <Route path="/" component={Home} />
+            <Route path="/home" component={Home} />
+            <Route path="/profile" component={Profile} />
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
           </Switch>
         </div>
       </ApolloProvider>
