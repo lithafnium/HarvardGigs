@@ -23,7 +23,7 @@ const deleteGig = async(obj, {input}) => {
 const resolver = {
     Mutation:{
         addGig,
-        deleteGig
+        deleteGig,
     }
 }
 

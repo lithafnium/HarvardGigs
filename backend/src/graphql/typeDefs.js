@@ -10,13 +10,8 @@ module.exports = gql`
 
   }
 
-<<<<<<< HEAD
-  type Mutations {
-    addGig(input: AddGigInput):Gig!
-=======
   type Mutation {
     addGig(input: AddGigInput!): Gig!
->>>>>>> 8a7175e37332e283ea93f24cb534e3ed3ccf0253
     deleteGig(id:ID!): Gig!
     # createUser(input:CreateUserInput!):User!
     login(email:String!, password:String!): AuthReturn!
