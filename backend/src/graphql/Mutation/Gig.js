@@ -1,5 +1,7 @@
 const Gig = require('../../models/Gig')
 
+
+
 const addGig = async(obj, {input}) => {
     try{
         const newGig = await Gig.query().insertGraph(input); 
@@ -26,3 +28,4 @@ const resolver = {
 }
 
 module.exports = resolver;  
+

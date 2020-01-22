@@ -2,13 +2,21 @@ const { gql } = require('apollo-server-express')
 
 module.exports = gql`
   type Query {
-    searchGigs(topic:String!):[Gig!]
-    searchGigs(userId:ID!):[Gig!]
-    searchGig(input: String!):[Gig!]
+    searchGigsTopic(topic:String!):[Gig!]
+    searchUser(id:ID!):User!
+    searchUsername(name:String!):[User!]
+    searchGigsInput(input: String!):[Gig!]
+    searchGigsPrice(price: Int!): [Gig!]
+
   }
 
+<<<<<<< HEAD
   type Mutations {
     addGig(input: AddGigInput):Gig!
+=======
+  type Mutation {
+    addGig(input: AddGigInput!): Gig!
+>>>>>>> 8a7175e37332e283ea93f24cb534e3ed3ccf0253
     deleteGig(id:ID!): Gig!
     # createUser(input:CreateUserInput!):User!
     login(email:String!, password:String!): AuthReturn!
@@ -38,10 +46,22 @@ module.exports = gql`
     title: String!
     photo: String!
     price: Int!
-    createdAt: Date!
+    topic: TaskStateEnum!
+    createdAt: String!
   }
 
-  type AddGigInput {
+  enum TaskStateEnum {
+    Furniture
+    Tech
+    Entertainment
+    Clothing
+    Beauty
+    Music
+    Social
+    Academic
+  }
+
+  input AddGigInput {
     title: String!
     photo: String!
     price: Int!
