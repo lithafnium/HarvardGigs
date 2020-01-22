@@ -14,6 +14,19 @@ const user = async (obj, {id}) => {
     return b
 }
 
+const username = async (obj, {name}) => {
+    try {
+        console.log({name})
+        const c = await User.query().where("firstName", "like", `${name}`)
+        return c
+    }
+    catch (err)
+    {
+        console.log(err)
+    }
+    
+}
+
 // const author = async ({authorId}) => {
 //     const a = await Author.query().findById(authorId)
 //     return a
@@ -30,6 +43,7 @@ const resolver = {
   Query: { 
     //   users: allUsers,
       searchUser: user, //left hand is the function in typeDefs and right hand is the const function in this file
+      searchUsername: username,
    },
 //    User: {
 //         email,
