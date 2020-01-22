@@ -6,8 +6,12 @@ module.exports = gql`
     searchUser(id:ID!):User!
     searchUsername(name:String!):[User!]
     searchGigsInput(input: String!):[Gig!]
-    searchGigsPrice(price: Int!): [Gig!]
+    searchGigsPrice(input: RangeInput!): [Gig!]
+  }
 
+  input RangeInput {
+    high: Int!
+    low: Int!
   }
 
   type Mutation {
