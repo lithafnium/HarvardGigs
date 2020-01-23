@@ -7,6 +7,7 @@ import {
 } from './styles'
 import { SignupButton } from '../Home/styles'
 import { LOGIN, TESTQUERY } from './graphql.js'
+import Button from './button'
 
 const Login = () => {
   const history = useHistory()
@@ -17,6 +18,7 @@ const Login = () => {
       email,
       password,
     },
+    onError: () => {},
     onCompleted: ({ login: { token } }) => {
       localStorage.setItem('token', token)
       history.push('/dashboard')
@@ -27,6 +29,10 @@ const Login = () => {
       input: { high: 1000, low: 150 },
     },
   })
+
+  if (error) {
+    return <p>Invalid email or password.</p>
+  }
 
   return (
     <Font>
@@ -50,6 +56,7 @@ const Login = () => {
         </LoginContainer>
     </Container>
     </Font>
+
 
 
   )
