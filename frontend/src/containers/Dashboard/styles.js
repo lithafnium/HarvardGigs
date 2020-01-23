@@ -6,6 +6,16 @@ export const Font = styled.div`
 `
 
 
+export const NavBar = styled.div`
+    background-color: #900c3f; 
+    width: 100%; 
+    display: flex; 
+    padding-left: 50px;
+    padding: 10px 10px 10px 50px;  
+    align-items: center; 
+    
+`
+
 export const Container = styled.div`
     max-width: 1440px; 
     display:flex;
@@ -105,7 +115,7 @@ export const SearchDiv = styled.div`
 export const SearchInput = styled.input`
     border: none;
     padding: 10px;
-    background-color: #eee;
+    background-color: #fff;
     margin-left:10px;
     border-radius: 3px;
     width:100%;
@@ -119,7 +129,7 @@ export const SearchButton = styled.button`
     margin-left: 10px;
     border-radius: 3px;
     padding: 10px 20px 10px 20px; 
-    border: 1px solid #900C3F;
+    border: 1px solid white;
     font-family: 'Roboto', sans-serif;
     justify-self:flex-end; /* why doesn't this work :( */
     transition: .3s background-color, .3s color;
@@ -181,7 +191,7 @@ export const Price = styled.h2`
     margin:5px 5px 5px 0;
 `
 export const GigText = styled.p`
-    margin:1px;
+    margin:2px;
     font-family: 'Roboto', sans-serif;
     font-size:18px;
 `
