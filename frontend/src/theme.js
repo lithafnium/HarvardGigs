@@ -1,8 +1,8 @@
 // Add global styles and fonts here
 
+
 const theme = {
   colors: {},
-  fonts: {},
+  fonts: {}
 }
-
 export default theme
