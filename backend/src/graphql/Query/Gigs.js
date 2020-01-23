@@ -25,6 +25,17 @@ const gigTitle = async (obj, {title}) => {
 
 }
 
+const getGigs = async () => {
+  try {
+    const gigs = await Gig.query()
+
+    return gigs
+  } catch (err) {
+    console.log(err); 
+    throw new Error('Failed to fetch Gigs')
+  }
+}
+
 
 
 
@@ -32,15 +43,14 @@ const resolver = {
   Query: {
     searchGigsPrice: gigPrice,
     searchGigsTopic: gigTopic,
-    searchGigsInput: gigTitle
+    searchGigInput: gigInput,
+    getGigs,
   },
-
-  
-  // Gig: {
-  //   price,
-  //   title,
-  //   topic,
-  // },
+  Gig: {
+    price,
+    title,
+    topic
+  },
 }
 
 module.exports = resolver
