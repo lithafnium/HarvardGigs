@@ -43,14 +43,14 @@ const resolver = {
   Query: {
     searchGigsPrice: gigPrice,
     searchGigsTopic: gigTopic,
-    searchGigInput: gigInput,
+    searchGigsTitle: gigTitle,
     getGigs,
   },
-  Gig: {
-    price,
-    title,
-    topic
-  },
+  // Gig: {
+  //   price,
+  //   title,
+  //   topic
+  // },
 }
 
 module.exports = resolver
