@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    width: 1000px;
-    height: 450px;
+    width: 55vw;
+    height: 37vh;
     display: flex;
-    margin: 0;
+    margin-left: 5vw;
     display: flex;
     justify-content: space-between;
     align-items: right;
@@ -13,8 +13,7 @@ export const Container = styled.div`
 
 export const ItemContainer = styled.div`
     display: flex;
-    min-width: 100%;
-    min-height: 350px;
+    height: 350px;
     flex-direction: row;
     overflow-x: auto;
     background-color: lightgray;
@@ -22,6 +21,7 @@ export const ItemContainer = styled.div`
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 40px;
+    padding-bottom: 20px;
 `
 export const Title = styled.div`
     font-size: 50px;

@@ -8,10 +8,23 @@ const Gig = require('../../models/Gig.js')
 //     const users = await User.query()
 //     return users
 // }
+const viewer = async (obj, args, { user }) => {
+    try{
+        if (user) return user
+    } catch(err){
+        console.log(err); 
+        throw new Error('Please Login')
+    }
+}
 
-const user = async (obj, { id }) => {
-  const b = await User.query().findById(id)
-  return b
+
+
+
+
+
+const user = async (obj, {id}, {user}) => {
+    const b = await User.query().findById(id)
+    return b
 }
 
 const username = async (obj, { name }) => {
@@ -52,15 +65,16 @@ const email = async (obj, { email }) => {
 const resolver = {
   Query: {
     //   users: allUsers,
-    searchUser: user, // left hand is the function in typeDefs and right hand is the const function in this file
-    searchUsername: username,
-    searchEmail: email,
-  },
-  //    User: {
-  //         email,
-  //         firstName,
-  //         lastName,
-  //     }
+      searchUser: user, //left hand is the function in typeDefs and right hand is the const function in this file
+      searchUsername: username,
+      searchEmail: email,
+      viewer: viewer,
+   },
+//    User: {
+//         email,
+//         firstName,
+//         lastName,
+//     }
 
 }
 

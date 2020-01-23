@@ -3,21 +3,21 @@ import styled from 'styled-components';
 
 export const Delete = styled.button`
     display: none;
-    width:175px;
-    height:60px;
+    width:7vw;
+    height:5vh;
     background-color: #900c3f;
     color: white;
     position: absolute;
     border-radius: 10px;
     cursor: pointer;
     border: none;
-    font-size: 20px;
+    font-size: 17px;
 
 `
 
 export const GigItemDiv = styled.div`
-    width: 200px;
-    height: 275px;
+    min-width: 8vw;
+    height: 80%;
     background-color: white;
     display:flex;
     justify-content:center;
@@ -31,14 +31,15 @@ export const GigItemDiv = styled.div`
         cursor:pointer;
         ${Delete} {
             display: block;
+            align-self: center;
         }
         background-color: #858585
 
     }
 `
 export const GigImg = styled.img`
-    width:175px;
-    height:200px;
+    width:7vw;
+    height:14vh;
 
 
 `
@@ -51,5 +52,6 @@ export const Price = styled.h2`
 export const GigText = styled.p`
     margin:1px;
     font-family: 'Roboto', sans-serif;
-    font-size:18px;
+    font-size:30%;
+    width: 7vw;
 `

@@ -9,6 +9,8 @@ module.exports = gql`
     searchGigsPrice(price: Int!): [Gig!]
     getGigs: [Gig!]!
     searchEmail(email:String!):[User!]
+    viewer: User!
+    viewerGigs: [Gig!]
   }
 
 

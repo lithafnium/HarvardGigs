@@ -4,7 +4,7 @@ import genericProfilePic from './genericProfilePic.jpeg';
 
 
 export const Container = styled.div`
-    width: 800px;
+    width: 40vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -43,11 +43,12 @@ export const Email = styled.div`
     display: flex;
     justify-content: center;
     font-size: 20px;
+    color: white;
 
 `
 export const AddButton = styled.button`
-    width: 125px;
-    height: 60px;
+    width: 10vw;
+    height: 5vh;
     background-color: white;
     color: #900c3f;
     display:flex;

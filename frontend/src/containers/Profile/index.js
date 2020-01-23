@@ -3,14 +3,15 @@ import Bio from './Bio'
 import Selling from './Selling'
 import Sold from './Sold'
 import { Font, Container, ItemsContainer, ProfileBackground, ProfileBContainer } from './styles'
+import SideNav from '../SideNav/sidenav'
 
 const Profile = () => (
   <Font>
+    <SideNav />
     <Container>
       <Bio />
       <ItemsContainer>
         <Selling />
-        <Sold />
       </ItemsContainer>
     </Container>
   </Font>

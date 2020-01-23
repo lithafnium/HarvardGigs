@@ -1,33 +1,41 @@
 /* eslint-disable linebreak-style */
 import React from 'react'
+import { useQuery } from '@apollo/react-hooks'
+import { GET_NAME } from './queries'
 import { Link } from 'react-router-dom'
 import { SideNavContainer, NavList, NavListItem, NavHeader } from './styles'
 import { CloseButton } from './sideNavButton'
-// import Home from '../Home'
+//import { user } from '../backend / src / lib / context.js
+// import Home from '../../Home'
 // import Dashboard from '.'
 
 
-const SideNav = ({ navOpen, setNavOpen }) => (
-  <div>
-    <SideNavContainer id="sidenav" navOpen={navOpen}>
-      <CloseButton navOpen={navOpen} setNavOpen={setNavOpen} />
-      <NavHeader>
-        <div style = {{width: "30%"}}>
-          <img style = {{width: "100%", height: "auto", borderRadius: "50%"}}src = "/IMG-6432.jpg"/>
-        </div>
-        <h1 style = {{margin: "30px"}}>Name</h1>
-      </NavHeader>
-      <NavList>
-        <NavListItem>
-          <Link style = {{textDecoration: "none"}}to="/">Profile</Link>
-        </NavListItem>
-        <NavListItem>
-          <Link style = {{textDecoration: "none"}} to="/dashboard">Shop</Link>
-        </NavListItem>
-      </NavList>
-    </SideNavContainer>
-    {/* <Router>
-
+const SideNav = ({ navOpen, setNavOpen }) => {
+  const { loading, error, data } = useQuery(GET_NAME, {
+    onError: err => console.log(err),
+    onCompleted: dat => console.log(dat)
+  });
+  
+  if (loading) return <h2>Loading</h2>
+  if (error) {
+    console.log(error);
+    return <h2>error</h2>
+  }
+  return (
+    <div>
+      <SideNavContainer id="sidenav" navOpen={navOpen}>
+        <CloseButton navOpen={navOpen} setNavOpen={setNavOpen} />
+  <h1 style={{ margin: "30px" }}>{`Hello, ${data.viewer.firstName} ${data.viewer.lastName}!`}</h1>
+        <NavList>
+          <NavListItem to="/">
+            <Link to="/">Home</Link>
+          </NavListItem>
+          <NavListItem>
+            <Link to="/dashboard">Dashboard</Link>
+          </NavListItem>
+        </NavList>
+      </SideNavContainer>
+      {/* <Router>
 
       <div>
         <Switch>
@@ -39,8 +47,22 @@ const SideNav = ({ navOpen, setNavOpen }) => (
     </Router> */}
 
 
-  </div>
-)
+    </div>
+
+
+
+
+  )
+
+
+
+
+
+
+
+
+ 
+}
 
 
 export default SideNav

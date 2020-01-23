@@ -17,7 +17,7 @@ export const Font = styled.div`
 `
 
 
-export const NavbarLink = styled.a`
+export const NavbarLink = styled(NavLink)`
 	 padding: 30px 30px 30px 30px; 
 	 font-size: 1.2rem; 
 	 color: #eeeeee;
