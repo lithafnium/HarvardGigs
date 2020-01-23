@@ -3,7 +3,7 @@ import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { GET_NAME } from './queries'
 import { Link } from 'react-router-dom'
-import { SideNavContainer, NavList, NavListItem } from './styles'
+import { SideNavContainer, NavList, NavListItem, NavHeader } from './styles'
 import { CloseButton } from './sideNavButton'
 //import { user } from '../backend / src / lib / context.js
 // import Home from '../../Home'
@@ -36,7 +36,6 @@ const SideNav = ({ navOpen, setNavOpen }) => {
         </NavList>
       </SideNavContainer>
       {/* <Router>
-
 
       <div>
         <Switch>

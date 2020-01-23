@@ -47,6 +47,7 @@ module.exports = gql`
   type Gig {
     id: ID!
     userId: ID!
+    user: User!
     title: String!
     photo: String!
     price: Int!
@@ -63,6 +64,7 @@ module.exports = gql`
     Music
     Social
     Academic
+    Other
   }
 
   input AddGigInput {
@@ -70,6 +72,7 @@ module.exports = gql`
     photo: String!
     price: Int!
     userId: ID!
+    topic:TaskStateEnum!
   }
 
   type AuthReturn {

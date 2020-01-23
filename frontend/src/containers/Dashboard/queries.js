@@ -5,6 +5,10 @@ export const GET_GIGS = gql`
         getGigs{
             id
             userId
+            user{
+                firstName
+                lastName
+            }
             title
             photo
             price

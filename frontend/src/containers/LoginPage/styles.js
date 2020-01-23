@@ -1,4 +1,4 @@
-import styled from "styled-components"; 
+import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
 export const Link = styled(NavLink)`
@@ -8,31 +8,64 @@ export const Link = styled(NavLink)`
 	 text-decoration: none;
 `
 export const Container = styled.div`
+    min-height: 100%;
+    min-height: 100vh;
+    width: 100%; 
     display: flex;
-    flex-direction: column;
-    margin: 20px 0;
+    justify-content: center; 
+    background-color: #900c3f;
             
 `
-export const LoginContainer = styled.div`
-	width: 500px;
-    height: 500px;
-    background-color: #900c3f;
-    margin: 100px;
-    align-self:center;
-    border-radius:5px;
-    padding: 20px;
-    display:flex;
-    flex-direction:column;
+
+export const PictureContainer = styled.div`
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    width: 50%; 
+
+    /* padding: 100px;  */
+
+    & img{
+        width: 60%; 
+        height: auto; 
+    }
 `
+export const LoginContainer = styled.div`
+    width: 50%; 
+	/* width: 500px; */
+    /* background-color: #900c3f; */
+    /* align-self:center;
+    border-radius:5px;
+    padding: 20px; */
+    align-items: center; 
+    justify-content: center; 
+    display:flex;
+    background-color: white; 
+    
+`
+export const InnerLogin = styled.div`
+
+    display: flex; 
+    flex-direction:column;
+    justify-content: center; 
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    padding: 50px; 
+    border-radius: 5px; 
+
+`
+
 export const Input = styled.input`
     border:none;
     padding: 8px;
-    margin: 0 0 5px 0;
-    background-color:lightgray;
+    margin: 0 0 20px 0;
+    background-color:white;
+    border: none; 
+    border-bottom: 2px solid #900c3f; 
+    font-size: 1.1rem;
     color:darkgray;
     transition: .2s;
     width: 300px;
-    border-radius:5px;
     align-self:center;
 
     &:focus{
@@ -42,10 +75,12 @@ export const Input = styled.input`
     }
 `
 export const Title = styled.p`
-    font-size:40px;
+    font-size:1.8rem;
+    font-weight: 600;
     align-self:center;
-    color:white;
-    margin:5px 0 20px 0;
+    color: black; 
+    margin-bottom: 40px; 
+    margin-top: 0px; 
 `
 export const Font = styled.div`
     @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');

@@ -3,10 +3,11 @@ import React, { useState } from 'react'
 import { useMutation, useLazyQuery } from '@apollo/react-hooks'
 import { useHistory } from 'react-router-dom'
 import {
-  Link, Container, LoginContainer, Input, Title, Font,
+  Link, Container, LoginContainer, Input, Title, Font, PictureContainer, InnerLogin
 } from './styles'
 import { SignupButton } from '../Home/styles'
 import { LOGIN, TESTQUERY } from './graphql.js'
+import Button from './button'
 
 const Login = () => {
   const history = useHistory()
@@ -17,6 +18,7 @@ const Login = () => {
       email,
       password,
     },
+    onError: () => {},
     onCompleted: ({ login: { token } }) => {
       localStorage.setItem('token', token)
       history.push('/dashboard')
@@ -28,22 +30,34 @@ const Login = () => {
     },
   })
 
+  if (error) {
+    return <p>Invalid email or password.</p>
+  }
+
   return (
+    <Font>
+
     <Container>
-      <Font>
+        <PictureContainer>
+          <img src = "/login.svg"/>
+          <p style = {{color: "white"}}>Login to get the full user experience</p>
+
+        </PictureContainer>
         <LoginContainer>
-          <Title>Login</Title>
-          <Input placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
-          <Input placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
-          <button type="button" onClick={login}> Login </button>
-          <button type="button" onClick={searchPrice}>Welcome!</button>
-          <p>Need to make an account?</p>
-          <Link to="/register">
-            <SignupButton>Signup</SignupButton>
-          </Link>
+          <InnerLogin>
+
+            <Title><span style = {{color: "#900c3f"}} >Login</span> to your account</Title>
+            <Input placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
+            <Input placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
+            <SignupButton>Login</SignupButton>
+
+            <p style = {{textAlign: "center"}}>Need to make an account? <a href = "/register">Sign up</a></p>
+          </InnerLogin>
         </LoginContainer>
-      </Font>
     </Container>
+    </Font>
+
+
 
   )
 }
