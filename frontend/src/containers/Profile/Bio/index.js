@@ -1,14 +1,28 @@
 import React from 'react'
+import { useQuery } from '@apollo/react-hooks'
+import { GET_NAME_PROFILE } from './queries'
 import { Container, ProfilePic, Name, Email, AddButton } from './styles'
 
 
-const Bio  = () => (
-    <Container>
-        <ProfilePic />
-        <Name>Natalia Calvo</Name>
-        <Email>ncalvo@college.harvard.edu</Email>
-        <AddButton> Add item</AddButton>
+const Bio  = () => {
+    const { loading, error, data } = useQuery(GET_NAME_PROFILE, {
+        onError: err => console.log(err),
+    });
 
-    </Container>
-)
+    if (loading) return <h2>Loading</h2>
+    if (error) {
+        console.log(error);
+        return <h2>error</h2>
+    }
+
+    return (
+        <Container>
+                <ProfilePic />
+                <Name>{`${data.viewer.firstName} ${data.viewer.lastName}`}</Name>
+                <Email>{`${data.viewer.email}`}</Email>
+                <AddButton> Add item</AddButton>
+
+            </Container>
+    )
+}
 export default Bio

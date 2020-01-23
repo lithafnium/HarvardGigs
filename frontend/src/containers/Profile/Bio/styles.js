@@ -43,6 +43,7 @@ export const Email = styled.div`
     display: flex;
     justify-content: center;
     font-size: 20px;
+    color: white;
 
 `
 export const AddButton = styled.button`

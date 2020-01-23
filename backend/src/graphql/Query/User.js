@@ -9,10 +9,15 @@ const Gig = require('../../models/Gig.js')
 //     return users
 // }
 const viewer = async (obj, args, { user }) => {
-    if (user) return user
-
-    throw new Error('Please Login')
+    try{
+        if (user) return user
+    } catch(err){
+        console.log(err); 
+        throw new Error('Please Login')
+    }
 }
+
+
 
 
 

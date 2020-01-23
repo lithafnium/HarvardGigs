@@ -36,7 +36,17 @@ const getGigs = async () => {
   }
 }
 
-
+const viewerGigs = async (obj, args, { user }) => {
+  try {
+    if (user) {
+    const gigs = await Gig.query().findById(user.id)
+    return gigs}
+    } catch (err) {
+    console.log(err);
+    throw new Error('Failed to fetch Gigs')
+    }
+  // throw new Error('Please Login')}
+  }
 
 
 const resolver = {
@@ -44,6 +54,7 @@ const resolver = {
     searchGigsPrice: gigPrice,
     searchGigsTopic: gigTopic,
     searchGigsTitle: gigTitle,
+    viewerGigs: viewerGigs,
     getGigs,
   },
   // Gig: {
