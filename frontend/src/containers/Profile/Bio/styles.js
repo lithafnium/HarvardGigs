@@ -4,7 +4,7 @@ import genericProfilePic from './genericProfilePic.jpeg';
 
 
 export const Container = styled.div`
-    width: 800px;
+    width: 40vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
