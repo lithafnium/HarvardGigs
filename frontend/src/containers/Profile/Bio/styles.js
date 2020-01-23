@@ -46,8 +46,8 @@ export const Email = styled.div`
 
 `
 export const AddButton = styled.button`
-    width: 125px;
-    height: 60px;
+    width: 10vw;
+    height: 5vh;
     background-color: white;
     color: #900c3f;
     display:flex;

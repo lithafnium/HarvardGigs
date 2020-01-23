@@ -12,21 +12,21 @@ const Navbar = (props) => {
         <Nav>
             <Brand>YardSale</Brand>
             <div className = "menu">
-                <NavbarLink>
+                <NavbarLink to = "/">
                     <Link to="team"
                         spy={true}
                         smooth={true}
                         offset={-70}
                         duration={500}>Home</Link>
                 </NavbarLink>
-                <NavbarLink>
+                <NavbarLink to="/">
                     <Link to="about"
                             spy={true}
                             smooth={true}
                             offset={-70}
                             duration={500}>About</Link>
                 </NavbarLink>
-                <NavbarLink>
+                <NavbarLink to="/">
                     <Link to="team"
                         spy={true}
                         smooth={true}

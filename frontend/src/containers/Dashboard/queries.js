@@ -11,4 +11,13 @@ export const GET_GIGS = gql`
             createdAt   
         }
     }
-    `
+`
+export const GET_NAME = gql`
+    query getName($id: ID!){
+            searchUser(id: $id) {
+                firstName
+                lastName
+            }
+        }
+
+`

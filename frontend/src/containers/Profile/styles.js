@@ -15,10 +15,9 @@ export const Container = styled.div`
 `
 
 export const ItemsContainer = styled.div`
-    width: 1000px;
-    height: 950px;
+    width: 80vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-top: 50px;
+    justify-content: space-around;
+    margin-top: 30px;
 `

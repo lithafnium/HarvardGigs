@@ -8,8 +8,15 @@ const Gig = require('../../models/Gig.js')
 //     const users = await User.query()
 //     return users
 // }
+const viewer = async (obj, args, { user }) => {
+    if (user) return user
 
-const user = async (obj, {id}) => {
+    throw new Error('Please Login')
+}
+
+
+
+const user = async (obj, {id}, {user}) => {
     const b = await User.query().findById(id)
     return b
 }
@@ -61,6 +68,7 @@ const resolver = {
       searchUser: user, //left hand is the function in typeDefs and right hand is the const function in this file
       searchUsername: username,
       searchEmail: email,
+      viewer: viewer,
    },
 //    User: {
 //         email,
