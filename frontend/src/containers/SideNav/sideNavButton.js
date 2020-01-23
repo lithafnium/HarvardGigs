@@ -7,9 +7,9 @@ export const SideNavButton = ({ navOpen, setNavOpen }) => (
   <div>
     
     <NavOpenButton type="button" onClick={() => setNavOpen(true)} navOpen={navOpen}>
-      <Bar></Bar>
-      <Bar></Bar>
-      <Bar></Bar>
+      <Bar style = {{width: "30px"}}></Bar>
+      <Bar style = {{width: "20px"}}></Bar>
+      <Bar style = {{width: "25px"}}></Bar>
     </NavOpenButton>
   </div>
 )

@@ -2,9 +2,10 @@ const casual = require('casual')
 const userData = require('./user')
 
  
-casual.define('gigs', ({ userId }) => ({
+casual.define('gigs', ({ userId, user }) => ({
   id: casual.uuid,
   userId,
+  
   title: casual.title,
   photo: casual.url,
   topic: casual.random_element(['Furniture',
@@ -17,9 +18,10 @@ casual.define('gigs', ({ userId }) => ({
 const gigsData = []
 
 for (let i = 0; i < 20; ++i) {
-  const userId = casual.random_element(userData).id
+  const user = casual.random_element(userData)
+  userId = user.id; 
   // const topic = 
-  gigsData.push(casual.gigs({ userId }))
+  gigsData.push(casual.gigs({ userId, user }))
   
 }
 

@@ -45,6 +45,7 @@ module.exports = gql`
   type Gig {
     id: ID!
     userId: ID!
+    user: User!
     title: String!
     photo: String!
     price: Int!
