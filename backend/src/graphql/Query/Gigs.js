@@ -19,17 +19,29 @@ const gigInput = async () => {
 
 }
 
+const getGigs = async () => {
+  try {
+    const gigs = await Gig.query()
+
+    return gigs
+  } catch (err) {
+    console.log(err); 
+    throw new Error('Failed to fetch Gigs')
+  }
+}
+
 
 const resolver = {
   Query: {
-    searchGigsPrice: gigPrice,
-    searchGigsTopic: gigTopic,
-    searchGigInput: gigInput
+    // searchGigsPrice: gigPrice,
+    // searchGigsTopic: gigTopic,
+    // searchGigInput: gigInput,
+    getGigs,
   },
   Gig: {
-    price,
-    title,
-    topic,
+    // price,
+    // title,
+    // topic,
   },
 }
 

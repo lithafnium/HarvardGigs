@@ -7,6 +7,7 @@ module.exports = gql`
     searchUsername(name:String!):[User!]
     searchGigsInput(input: String!):[Gig!]
     searchGigsPrice(price: Int!): [Gig!]
+    getGigs: [Gig!]!
 
   }
 
