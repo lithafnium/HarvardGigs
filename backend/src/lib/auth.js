@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express')
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const config = require('../config')
 
@@ -18,13 +18,13 @@ const createToken = payload => jwt.sign(payload, config.tokenSecret)
  */
 const decodeToken = token => {
   if (!token) {
-    console.log('invalid token 1')
+    console.log("invalid token 1")
     throw new AuthenticationError('Invalid token, please log in.')
   }
   try {
     return jwt.verify(token, config.tokenSecret)
   } catch (error) {
-    console.log('invalid token 2')
+    console.log("invalid token 2")
     throw new AuthenticationError('Invalid token, please log in.')
   }
 }
@@ -36,16 +36,12 @@ const decodeToken = token => {
  * @returns {Promise.<string>}
  */
 const hashPassword = password => new Promise((resolve, reject) => {
-  bcrypt.genSalt(10, (err1, salt) => {
-    bcrypt.hash(password, salt, (err2, hash) => {
-      if (err1) {
-        reject(err1)
-      } else if (err2) {
-        reject(err2)
-      } else {
-        resolve(hash)
-      }
-    })
+  bcrypt.hash(password, 10, (err, hash) => {
+    if (err) {
+      reject(err)
+    } else {
+      resolve(hash)
+    }
   })
 })
 

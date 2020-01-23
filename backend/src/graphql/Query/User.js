@@ -9,32 +9,38 @@ const Gig = require('../../models/Gig.js')
 //     return users
 // }
 
-const user = async (obj, { id }) => {
-  const b = await User.query().findById(id)
-  return b
+const user = async (obj, {id}) => {
+    const b = await User.query().findById(id)
+    return b
 }
 
-const username = async (obj, { name }) => {
-  try {
-    // console.log({name})
-    const c = await User.query()
-      .where('firstName', 'like', `%${name}%`)
-      .orWhere('lastName', 'like', `%${name}%`)
-    return c
-  } catch (err) {
-    console.log(err)
-  }
+const username = async (obj, {name}) => {
+    try {
+        // console.log({name})
+        const c = await User.query()
+            .where("firstName", "like", `%${name}%`)
+            .orWhere("lastName", "like", `%${name}%`)
+        return c
+    }
+    catch (err)
+    {
+        console.log(err)
+    }
+    
 }
 
-const email = async (obj, { email }) => {
-  try {
-    console.log({ email })
-    const d = await User.query()
-      .where('email', 'like', `%${email}%`)
-    return d
-  } catch (err) {
-    console.log(err)
-  }
+const email = async (obj, {email}) => {
+    try {
+        console.log({email})
+        const d = await User.query()
+            .where("email", "like", `%${email}%`)
+        return d
+    }
+    catch (err)
+    {
+        console.log(err)
+    }
+    
 }
 
 // const author = async ({authorId}) => {
@@ -50,17 +56,17 @@ const email = async (obj, { email }) => {
 
 // This resolver object mirrors the shape of your TypeDefs
 const resolver = {
-  Query: {
+  Query: { 
     //   users: allUsers,
-    searchUser: user, // left hand is the function in typeDefs and right hand is the const function in this file
-    searchUsername: username,
-    searchEmail: email,
-  },
-  //    User: {
-  //         email,
-  //         firstName,
-  //         lastName,
-  //     }
+      searchUser: user, //left hand is the function in typeDefs and right hand is the const function in this file
+      searchUsername: username,
+      searchEmail: email,
+   },
+//    User: {
+//         email,
+//         firstName,
+//         lastName,
+//     }
 
 }
 

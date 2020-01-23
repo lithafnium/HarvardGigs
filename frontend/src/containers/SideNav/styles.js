@@ -46,13 +46,6 @@ export const NavCloseButton = styled.button`
     font-size: 2rem; 
     font-weight: bold; 
     margin: 50px 0px 0px 20px; 
-    &:hover{
-        cursor:pointer;
-    }
-    &:focus{
-        outline:none;
-        
-    }
 `
 export const NavOpenButton = styled.button`
     font-size: 2rem; 
@@ -64,13 +57,6 @@ export const NavOpenButton = styled.button`
     height:25px;
     margin-right: 50px;  
     
-    &:focus{
-        outline:none;
-        
-    }
-    &:hover{
-        cursor:pointer;
-    }
 `
 
 export const Bar = styled.p`

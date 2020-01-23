@@ -7,7 +7,6 @@ import {
 } from './styles'
 import { SignupButton } from '../Home/styles'
 import { LOGIN, TESTQUERY } from './graphql.js'
-import Button from './button'
 
 const Login = () => {
   const history = useHistory()
@@ -18,7 +17,6 @@ const Login = () => {
       email,
       password,
     },
-    onError: () => {},
     onCompleted: ({ login: { token } }) => {
       localStorage.setItem('token', token)
       history.push('/dashboard')
@@ -30,26 +28,22 @@ const Login = () => {
     },
   })
 
-  if (error) {
-    return <p>Invalid email or password.</p>
-  }
-
   return (
-    <Font>
-      <Container>
-
+    <Container>
+      <Font>
         <LoginContainer>
           <Title>Login</Title>
           <Input placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
           <Input placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
-          <Button email={email} password={password} />
+          <button type="button" onClick={login}> Login </button>
+          <button type="button" onClick={searchPrice}>Welcome!</button>
           <p>Need to make an account?</p>
           <Link to="/register">
             <SignupButton>Signup</SignupButton>
           </Link>
         </LoginContainer>
-      </Container>
-    </Font>
+      </Font>
+    </Container>
 
   )
 }
