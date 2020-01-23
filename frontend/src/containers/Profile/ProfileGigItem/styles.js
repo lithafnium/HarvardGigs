@@ -52,5 +52,6 @@ export const Price = styled.h2`
 export const GigText = styled.p`
     margin:1px;
     font-family: 'Roboto', sans-serif;
-    font-size:18px;
+    font-size:30%;
+    width: 7vw;
 `

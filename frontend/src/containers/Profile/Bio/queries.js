@@ -10,3 +10,4 @@ export const GET_NAME_PROFILE = gql`
         }
 
 `
+

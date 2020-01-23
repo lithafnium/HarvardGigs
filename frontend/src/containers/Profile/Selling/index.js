@@ -27,7 +27,7 @@ const Selling = () => {
   console.log(data);
   console.log('rfjgnerjf;3jq')
   console.log(data.viewerGigs)
-  //data.viewerGigs.forEach((b) => gigs.push(b));
+  data.viewerGigs.forEach((b) => gigs.push(b));
   console.log(gigs);
 
 return (

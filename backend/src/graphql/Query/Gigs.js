@@ -39,7 +39,7 @@ const getGigs = async () => {
 const viewerGigs = async (obj, args, { user }) => {
   try {
     if (user) {
-    const gigs = await Gig.query().findById(user.id)
+    const gigs = await Gig.query().where("userId", user.id)
     return gigs}
     } catch (err) {
     console.log(err);
@@ -47,6 +47,7 @@ const viewerGigs = async (obj, args, { user }) => {
     }
   // throw new Error('Please Login')}
   }
+
 
 
 const resolver = {

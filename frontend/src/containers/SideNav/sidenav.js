@@ -27,7 +27,7 @@ const SideNav = ({ navOpen, setNavOpen }) => {
         <CloseButton navOpen={navOpen} setNavOpen={setNavOpen} />
   <h1 style={{ margin: "30px" }}>{`Hello, ${data.viewer.firstName} ${data.viewer.lastName}!`}</h1>
         <NavList>
-          <NavListItem>
+          <NavListItem to="/">
             <Link to="/">Home</Link>
           </NavListItem>
           <NavListItem>

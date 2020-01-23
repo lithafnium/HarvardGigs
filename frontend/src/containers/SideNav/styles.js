@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 export const SideNavContainer = styled.div`
     top: 0; 
@@ -21,6 +22,8 @@ export const NavList = styled.ul`
    margin: 30px;
   padding: 0;
   width: 80px;
+  display:flex;
+  flex-direction: column;
     
 `
 export const NavListItem = styled.li`
@@ -29,7 +32,6 @@ export const NavListItem = styled.li`
     transition: 0.3s color;
     color:black;
     text-decoration:none;
-
     a:hover{
         cursor:pointer;
         color:lightgrey;
