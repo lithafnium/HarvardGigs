@@ -5,7 +5,7 @@ module.exports = gql`
     searchGigsTopic(topic:String!):[Gig!]
     searchUser(id:ID!):User!
     searchUsername(name:String!):[User!]
-    searchGigsInput(input: String!):[Gig!]
+    searchGigsTitle(input: String!):[Gig!]
     searchGigsPrice(price: Int!): [Gig!]
     getGigs: [Gig!]!
     searchEmail(email:String!):[User!]
