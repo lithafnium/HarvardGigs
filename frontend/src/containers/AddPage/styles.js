@@ -81,3 +81,24 @@ export const Input = styled.input`
         outline:none;
     }
 `
+
+// export const NumInput = styled.input`
+//     border:none;
+//     padding: 8px;
+//     margin: 0 0 20px 0;
+//     background-color:white;
+//     border: none; 
+//     border-bottom: 2px solid #900c3f; 
+//     font-size: 1.1rem;
+//     color:darkgray;
+//     transition: .2s;
+//     width: 100%;
+//     align-self:center;
+
+//     &:focus{
+//         background-color:white;
+//         color:black;
+//         outline:none;
+//     }
+// `
+
