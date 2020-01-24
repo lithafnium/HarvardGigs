@@ -23,6 +23,7 @@ module.exports = gql`
     # createUser(input:CreateUserInput!):User!
     login(email:String!, password:String!): AuthReturn!
     register(input: RegisterInput!): AuthReturn!
+    sendInterest(posterId:ID!):String!
   }
 
   type User {
