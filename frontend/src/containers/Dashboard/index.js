@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import FilterBar from './filterbar'
 import Search from './search'
 import Gigs from './gigs'
-import { Container, RightContainer, navOpenButton, Font, NavBar, ProfilePic, Link } from './styles'
+import { Container, RightContainer, navOpenButton, Font, NavBar, ProfilePic, Link, NavbarLink, SignupButton  } from './styles'
 import SideNavDiv from './sidenavdiv'
 import { NavLink } from 'react-router-dom'
 
@@ -10,6 +10,7 @@ import { NavLink } from 'react-router-dom'
 const Dashboard = () => {
 
     const [searchText, setSearchText] = useState('')
+    const logout = () => localStorage.removeItem("token")
 
     return(
     
@@ -21,6 +22,9 @@ const Dashboard = () => {
           <NavLink to='./profile'>
             <ProfilePic />
           </NavLink>
+          <NavbarLink to="/login">
+            <SignupButton onClick={logout}>Log out</SignupButton>
+          </NavbarLink>
 
       </NavBar>
 

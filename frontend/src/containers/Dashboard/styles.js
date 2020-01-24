@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import genericProfilePic from '../Profile/Bio/genericProfilePic.jpeg';
-
+import { NavLink } from 'react-router-dom'
 
 export const Font = styled.div`
      @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');  
@@ -19,7 +19,7 @@ export const NavBar = styled.div`
 `
 
 export const Container = styled.div`
-    max-width: 1440px; 
+    max-width: 1200px; 
     display:flex;
     padding: 50px;
     
@@ -107,8 +107,8 @@ export const CategoryItem = styled.span`
 export const SearchDiv = styled.div`
     display:flex;
     margin-left:80px;
-    margin-right: 80px;
-    max-width: 900px;
+    margin-right: 40px;
+    max-width: 800px;
     width: 100%; 
     height: 40px;
     padding:10px;
@@ -209,4 +209,27 @@ export const ProfilePic = styled.div`
     background-size: cover;
     display: flex;
     justify-self: flex-end;
+`
+export const NavbarLink = styled(NavLink)`
+	 padding: 30px 30px 30px 30px; 
+	 font-size: 1.2rem; 
+	 color: #eeeeee;
+	 text-decoration: none;
+     display:flex;
+     justify-content: center;
+     align-content: center;
+`
+export const SignupButton = styled.button`
+    padding: 10px 20px 10px 20px; 
+	border-radius: 5px; 
+	border: none; 
+	font-weight: bold; 
+	font-size: 1.1rem; 
+    color: white;
+	background-color: #581845; 
+	/*border: 2px solid white;*/
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	cursor: pointer;
+
+
 `
