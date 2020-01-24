@@ -9,6 +9,7 @@ import Profile from './containers/Profile'
 import Dashboard from './containers/Dashboard'
 import Login from './containers/LoginPage'
 import Register from './containers/RegisterPage'
+import AddPage from './containers/AddPage'
 
 const App = () => (
   <Router>
@@ -17,6 +18,7 @@ const App = () => (
         <div className="App">
           <Switch>
             <Route path="/profile" component={Profile} />
+            <Route path = "/addpage" component = {AddPage}/>
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />

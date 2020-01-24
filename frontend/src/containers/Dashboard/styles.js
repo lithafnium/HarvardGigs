@@ -13,7 +13,7 @@ export const NavBar = styled.div`
     width: 100vw; 
     display: flex; 
     padding-left: 50px;
-    padding: 10px 50px 0px 50px;  
+    padding: 10px 50px 10px 50px;  
     align-items: center; 
     
 `
@@ -39,7 +39,7 @@ export const CategoryList=styled.ul`
 `
 export const FilterDiv = styled.div`
     /* padding-top: 100px; */
-    align-self:left;
+    /* align-self:left; */
     position: relative;
     left:0px;
 
@@ -131,6 +131,7 @@ export const SearchButton = styled.button`
     color: white;
     margin-left: 10px;
     border-radius: 3px;
+    width: 100px; 
     padding: 10px 20px 10px 20px; 
     border: 1px solid white;
     font-family: 'Roboto', sans-serif;
@@ -200,8 +201,8 @@ export const GigText = styled.p`
 `
 
 export const ProfilePic = styled.div`
-    width: 3.5vw;
-    height: 7vh;
+    width: 60px;
+    height: 60px;
     border-radius: 50%; /*don't forget prefixes*/
     background-image: url(${genericProfilePic});
     background-position: center center;

@@ -1,22 +1,26 @@
 import React from 'react'
-import { Container, Font } from '../Dashboard/styles'
+import {  Font } from '../Dashboard/styles'
 import SideNavDiv from '../Dashboard/sidenavdiv'
 import Form from './form'
-import { InnerDiv, Button, Input } from './styles'
+import { Container, InnerDiv, Button, Input, NavContainer } from './styles'
 
 const AddPage = () => (
   <Font>
+    <NavContainer>
+    <SideNavDiv />
+      <h1 style = {{color: "#fff"}}>YardSale</h1>
+      </NavContainer>
     <Container style={{
-      alignItems: 'center',
-      paddingBottom: '0px',
-      paddingTop: '20px',
+      // alignItems: 'center',
+      // paddingBottom: '0px',
+      // paddingTop: '20px',
     }}
     >
-      <SideNavDiv />
-      <h1>YardSale</h1>
-    </Container>
+      
 
     <Form />
+    </Container>
+
   </Font>
 )
 
