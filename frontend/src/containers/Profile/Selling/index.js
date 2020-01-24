@@ -8,7 +8,7 @@ import { GET_VIEW_GIGS, DELETE } from './queries'
 
 
 const Selling = () => {
-  const { loading:loading, error:error, data:data } = useQuery(GET_VIEW_GIGS, {
+  const { loading, error, data } = useQuery(GET_VIEW_GIGS, {
     onError: err => console.log(err) });
   if (loading) return <h2>Loading</h2>
   if (error) {
@@ -22,20 +22,13 @@ const Selling = () => {
       </Container>
     )
   }
-  let gigs = [];
-  console.log(data);
-  console.log('rfjgnerjf;3jq')
-  console.log(data.viewerGigs)
-  data.viewerGigs.forEach((b) => gigs.push(b));
-  console.log(gigs);
-
+  console.log('all gigs: ', data.viewerGigs)
 return (
   <Container>
     <Title>Currently Selling</Title>
     <ItemContainer>
-      {gigs.map(({id, title, price}, index) => 
-      <PGigItem title = {title} price= {price} id = {id} />
-      
+      {data.viewerGigs.map(({id, title, price}) => 
+        <PGigItem key={id} title={title} price={price} id={id} />
       )}
       
     </ItemContainer>

@@ -50,6 +50,7 @@ const getGigs = async () => {
 }
 
 const viewerGigs = async (obj, args, { user }) => {
+  console.log(user)
   try {
     if (user) {
     const gigs = await Gig.query().where("userId", user.id)

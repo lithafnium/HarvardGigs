@@ -20,6 +20,7 @@ const Login = () => {
     },
     onError: () => {},
     onCompleted: ({ login: { token } }) => {
+      console.log('TOKEN: ', token)
       localStorage.setItem('token', token)
       history.push('/dashboard')
     },
