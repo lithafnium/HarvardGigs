@@ -23,7 +23,6 @@ const Bio  = () => {
             <ProfilePic />
             <Name>{`${data.viewer.firstName} ${data.viewer.lastName}`}</Name>
             <Email>{`${data.viewer.email}`}</Email>
-            <AddButton> Add item</AddButton>
         </Container>
     )
 }

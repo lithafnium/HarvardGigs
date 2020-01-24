@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import genericProfilePic from '../Profile/Bio/genericProfilePic.jpeg';
+import Trump from '../trump.jpg';
 import { NavLink } from 'react-router-dom'
 
 export const Font = styled.div`
@@ -204,7 +204,7 @@ export const ProfilePic = styled.div`
     width: 60px;
     height: 60px;
     border-radius: 50%; /*don't forget prefixes*/
-    background-image: url(${genericProfilePic});
+    background-image: url(${Trump});
     background-position: center center;
     /* as mentioned by Vad: */
     background-size: cover;

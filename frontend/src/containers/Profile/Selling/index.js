@@ -27,8 +27,8 @@ return (
   <Container>
     <Title>Currently Selling</Title>
     <ItemContainer>
-      {data.viewerGigs.map(({id, title, price}) => 
-        <PGigItem key={id} title={title} price={price} id={id} />
+      {data.viewerGigs.map(({id, title, price, photo}) => 
+        <PGigItem key={id} title={title} price={price} id={id} photo={photo} />
       )}
       
     </ItemContainer>
