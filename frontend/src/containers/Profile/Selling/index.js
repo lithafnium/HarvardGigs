@@ -3,12 +3,12 @@ import {
   Container, ItemContainer, Title,
 } from './styles'
 import  PGigItem  from '../ProfileGigItem'
-import { useQuery } from '@apollo/react-hooks'
-import { GET_VIEW_GIGS } from './queries'
+import { useQuery, useMutation } from '@apollo/react-hooks'
+import { GET_VIEW_GIGS, DELETE } from './queries'
 
 
 const Selling = () => {
-  const { loading, error, data } = useQuery(GET_VIEW_GIGS, {
+  const { loading:loading, error:error, data:data } = useQuery(GET_VIEW_GIGS, {
     onError: err => console.log(err) });
   if (loading) return <h2>Loading</h2>
   if (error) {
@@ -17,11 +17,10 @@ const Selling = () => {
       <Container>
         <Title>Currently Selling</Title>
         <ItemContainer>
-          Either something went wrong (probably) or you havent put anything up for sale (also likely)
+          Something went wrong! My fault.
         </ItemContainer>
       </Container>
     )
-
   }
   let gigs = [];
   console.log(data);
@@ -35,7 +34,7 @@ return (
     <Title>Currently Selling</Title>
     <ItemContainer>
       {gigs.map(({id, title, price}, index) => 
-      <PGigItem title = {title} price= {price} />
+      <PGigItem title = {title} price= {price} id = {id} />
       
       )}
       

@@ -21,7 +21,7 @@ module.exports = gql`
 
   type Mutation {
     addGig(input: AddGigInput!): Gig!
-    deleteGig(id:ID!): Gig!
+    deleteGig(id:ID!): ID!
     # createUser(input:CreateUserInput!):User!
     login(email:String!, password:String!): AuthReturn!
     register(input: RegisterInput!): AuthReturn!
@@ -49,7 +49,7 @@ module.exports = gql`
     userId: ID!
     user: User!
     title: String!
-    photo: String!
+    photo: String
     price: Int!
     topic: TaskStateEnum!
     createdAt: String!
