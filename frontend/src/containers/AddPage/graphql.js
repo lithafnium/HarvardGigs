@@ -7,7 +7,7 @@ const ADD_GIG = gql`
     title
     photo
     price
-	topic
+	  topic
     userId
   }
 }

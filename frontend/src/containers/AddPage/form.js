@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLazyQuery } from '@apollo/react-hooks'
+import { useLazyQuery, useMutation} from '@apollo/react-hooks'
 //import { Container } from '../Dashboard/styles'
 import Upload from './upload'
 import { InnerDiv, Button, Input, Container, FormDiv, UploadDiv, OuterDiv } from './styles'
@@ -9,17 +9,18 @@ const Form = () => {
   const [title, setTitle] = useState('')
   const [price, setPrice] = useState(0)
   const [descrip, setDescrip] = useState('')
-  const [addGig, { loading, error, data }] = useLazyQuery(ADD_GIG, {
+  const [addGig, { loading, error, data }] = useMutation(ADD_GIG, {
     variables: { // this needs to be done!!!!!
       input: {
         title,
         photo: 'https://www.tompetty.com/sites/g/files/g2000007521/f/Sample-image10-highres.jpg',
         price,
-        userId: 'af17ddec-e297-45c5-9fa5-6b13e6c7898f',
+        userId: '4608c154-e9cc-492b-a822-8dfece620a38',
         topic: 'Entertainment',
       },
     },
   })
+  if(error) console.log(error); 
   return (
       <OuterDiv>
         <h1 style = {{textAlign: "left"}}>Add Gig</h1>
@@ -35,7 +36,7 @@ const Form = () => {
         <FormInput label="Title" value={title} setValue={setTitle} />
         <FormInput label="Description" value={descrip} setValue={setDescrip} />
 
-        <Input type="number" min="0.00" max="1000.00" step="1" placeholder="Price" onChange={e => setPrice(e.target.value)} />
+        <Input type="number" min="0.00" max="1000.00" step="1" placeholder="Price" onChange={e => setPrice(e.target.valueAsNumber )} />
         <select style = {{width: "100%", 
                           fontSize: "1.2rem", 
                           borderRadius: "2px"}} multiple>
@@ -55,6 +56,10 @@ const Form = () => {
 }
 
 export default Form
+
+// export const NumInput = ({label, value, setValue}) => (
+//   <Input placeholder = {label} value = {value} onChange = {e =>setValue(e.target.value.parseInt())}></Input>
+// )
 
 export const FormInput = ({ label, value, setValue }) => (
   <Input placeholder={label} value={value} onChange={e => setValue(e.target.value)} />
