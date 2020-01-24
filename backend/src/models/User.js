@@ -1,4 +1,5 @@
 const BaseModel = require('./BaseModel')
+const { BelongsToOneRelation } = require('objection')
  
 class User extends BaseModel {
  static get tableName() {

@@ -18,13 +18,13 @@ const createToken = payload => jwt.sign(payload, config.tokenSecret)
  */
 const decodeToken = token => {
   if (!token) {
-    console.log("invalid token 1")
+    console.log('invalid token 1')
     throw new AuthenticationError('Invalid token, please log in.')
   }
   try {
     return jwt.verify(token, config.tokenSecret)
   } catch (error) {
-    console.log("invalid token 2")
+    console.log('invalid token 2')
     throw new AuthenticationError('Invalid token, please log in.')
   }
 }

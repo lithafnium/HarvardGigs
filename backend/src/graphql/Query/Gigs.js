@@ -1,4 +1,5 @@
 const Gig = require('../../models/Gig')
+const User = require('../../models/User')
 
 
 const gigPrice = async (obj, {input}, {user}) => {
@@ -25,6 +26,18 @@ const gigTitle = async (obj, {title}) => {
 
 }
 
+const user = async ({ userId }) => {
+  console.log(userId); 
+  try {
+    const user = await User.query().findById(userId)
+
+    return user
+  } catch (err) {
+    console.log(err); 
+    throw new Error('Failed to fetch user')
+  }
+}
+
 const getGigs = async () => {
   try {
     const gigs = await Gig.query()
@@ -36,6 +49,17 @@ const getGigs = async () => {
   }
 }
 
+const viewerGigs = async (obj, args, { user }) => {
+  try {
+    if (user) {
+    const gigs = await Gig.query().where("userId", user.id)
+    return gigs}
+    } catch (err) {
+    console.log(err);
+    throw new Error('Failed to fetch Gigs')
+    }
+  // throw new Error('Please Login')}
+  }
 
 
 
@@ -44,13 +68,12 @@ const resolver = {
     searchGigsPrice: gigPrice,
     searchGigsTopic: gigTopic,
     searchGigsTitle: gigTitle,
+    viewerGigs: viewerGigs,
     getGigs,
   },
-  // Gig: {
-  //   price,
-  //   title,
-  //   topic
-  // },
+  Gig: {
+    user
+  },
 }
 
 module.exports = resolver

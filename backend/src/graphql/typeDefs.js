@@ -9,6 +9,8 @@ module.exports = gql`
     searchGigsPrice(price: Int!): [Gig!]
     getGigs: [Gig!]!
     searchEmail(email:String!):[User!]
+    viewer: User!
+    viewerGigs: [Gig!]
   }
 
 
@@ -19,7 +21,7 @@ module.exports = gql`
 
   type Mutation {
     addGig(input: AddGigInput!): Gig!
-    deleteGig(id:ID!): Gig!
+    deleteGig(id:ID!): ID!
     # createUser(input:CreateUserInput!):User!
     login(email:String!, password:String!): AuthReturn!
     register(input: RegisterInput!): AuthReturn!
@@ -46,8 +48,9 @@ module.exports = gql`
   type Gig {
     id: ID!
     userId: ID!
+    user: User!
     title: String!
-    photo: String!
+    photo: String
     price: Int!
     topic: TaskStateEnum!
     createdAt: String!
@@ -62,6 +65,7 @@ module.exports = gql`
     Music
     Social
     Academic
+    Other
   }
 
   input AddGigInput {
@@ -69,6 +73,7 @@ module.exports = gql`
     photo: String!
     price: Int!
     userId: ID!
+    topic:TaskStateEnum!
   }
 
   type AuthReturn {
@@ -79,5 +84,7 @@ module.exports = gql`
   input RegisterInput {
     email: String!
     password: String!
+    firstName: String!
+    lastName: String!
   }
 `

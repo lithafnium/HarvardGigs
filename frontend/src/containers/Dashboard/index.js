@@ -1,31 +1,40 @@
-import React from 'react'
+import React, {useState} from 'react'
 import FilterBar from './filterbar'
 import Search from './search'
 import Gigs from './gigs'
-import { Container, RightContainer, navOpenButton, Font } from './styles'
+import { Container, RightContainer, navOpenButton, Font, NavBar, ProfilePic, Link } from './styles'
 import SideNavDiv from './sidenavdiv'
+import { NavLink } from 'react-router-dom'
 
 
-const Dashboard = () => (
-  <Font>
-    <Container style = {{alignItems: "center",
-                        paddingBottom: "0px", 
-                        paddingTop: "20px"}}>
-      <SideNavDiv />
-      <h1>YardSale</h1>
-      <Search />
-    </Container>
+const Dashboard = () => {
 
-    <Container>
+    const [searchText, setSearchText] = useState('')
 
-      <RightContainer>
-        <FilterBar />
-          <Gigs />
-      </RightContainer>
+    return(
+    
+    <Font>
+      <NavBar >
+        <SideNavDiv />
+        <h1 style = {{color: "#fff"}}>YardSale</h1>
+        <Search setSearchText = {setSearchText} searchText = {searchText}/>
+          <NavLink to='./profile'>
+            <ProfilePic />
+          </NavLink>
 
-    </Container>
-  </Font>
-)
+      </NavBar>
+
+      <Container>
+
+        <RightContainer>
+          <FilterBar />
+            <Gigs searchText = {searchText} />
+        </RightContainer>
+
+      </Container>
+    </Font>
+  )
+}
 
 
 export default Dashboard

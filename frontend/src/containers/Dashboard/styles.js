@@ -1,10 +1,22 @@
 import styled from 'styled-components';
+import genericProfilePic from '../Profile/Bio/genericProfilePic.jpeg';
+
 
 export const Font = styled.div`
      @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');  
      font-family: 'Roboto', sans-serif;
 `
 
+
+export const NavBar = styled.div`
+    background-color: #900c3f; 
+    width: 100vw; 
+    display: flex; 
+    padding-left: 50px;
+    padding: 10px 50px 0px 50px;  
+    align-items: center; 
+    
+`
 
 export const Container = styled.div`
     max-width: 1440px; 
@@ -95,6 +107,7 @@ export const CategoryItem = styled.span`
 export const SearchDiv = styled.div`
     display:flex;
     margin-left:80px;
+    margin-right: 80px;
     max-width: 900px;
     width: 100%; 
     height: 40px;
@@ -105,7 +118,7 @@ export const SearchDiv = styled.div`
 export const SearchInput = styled.input`
     border: none;
     padding: 10px;
-    background-color: #eee;
+    background-color: #fff;
     margin-left:10px;
     border-radius: 3px;
     width:100%;
@@ -119,7 +132,7 @@ export const SearchButton = styled.button`
     margin-left: 10px;
     border-radius: 3px;
     padding: 10px 20px 10px 20px; 
-    border: 1px solid #900C3F;
+    border: 1px solid white;
     font-family: 'Roboto', sans-serif;
     justify-self:flex-end; /* why doesn't this work :( */
     transition: .3s background-color, .3s color;
@@ -181,7 +194,19 @@ export const Price = styled.h2`
     margin:5px 5px 5px 0;
 `
 export const GigText = styled.p`
-    margin:1px;
+    margin:2px;
     font-family: 'Roboto', sans-serif;
     font-size:18px;
+`
+
+export const ProfilePic = styled.div`
+    width: 3.5vw;
+    height: 7vh;
+    border-radius: 50%; /*don't forget prefixes*/
+    background-image: url(${genericProfilePic});
+    background-position: center center;
+    /* as mentioned by Vad: */
+    background-size: cover;
+    display: flex;
+    justify-self: flex-end;
 `
