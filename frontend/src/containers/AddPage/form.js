@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useLazyQuery } from '@apollo/react-hooks'
-import { Container } from '../Dashboard/styles'
+//import { Container } from '../Dashboard/styles'
 import Upload from './upload'
-import { InnerDiv, Button, Input } from './styles'
+import { InnerDiv, Button, Input, Container, FormDiv, UploadDiv, OuterDiv } from './styles'
 import ADD_GIG from './graphql'
 
 const Form = () => {
@@ -21,18 +21,24 @@ const Form = () => {
     },
   })
   return (
-
-    <Container>
+      <OuterDiv>
+        <h1 style = {{textAlign: "left"}}>Add Gig</h1>
       <InnerDiv right={false}>
+        
+
+        <UploadDiv>
         <Upload />
-        <Button type="button">Add</Button>
-      </InnerDiv>
-      <InnerDiv right>
+        <Button type="button" onClick = {addGig}>Add</Button>
+        </UploadDiv>
+        <FormDiv>
+      
         <FormInput label="Title" value={title} setValue={setTitle} />
         <FormInput label="Description" value={descrip} setValue={setDescrip} />
 
         <Input type="number" min="0.00" max="1000.00" step="1" placeholder="Price" onChange={e => setPrice(e.target.value)} />
-        <select multiple>
+        <select style = {{width: "100%", 
+                          fontSize: "1.2rem", 
+                          borderRadius: "2px"}} multiple>
           <option value="Tech">Tech</option>
           <option value="Entertainment">Entertainment</option>
           <option value="Furniture">Furniture</option>
@@ -42,8 +48,9 @@ const Form = () => {
           <option value="Social">Social</option>
           <option value="Academic">Academic</option>
         </select>
+        </FormDiv>
       </InnerDiv>
-    </Container>
+      </OuterDiv>
   )
 }
 
