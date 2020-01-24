@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+
+
 export const Font = styled.div`
     @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
     font-family: 'Roboto', sans-serif;
@@ -11,7 +13,6 @@ export const Container = styled.div`
     display: flex;
     justify-self: center;
     justify-content: space-evenly;
-    margin-top: 100px;
 `
 
 export const ItemsContainer = styled.div`
@@ -20,4 +21,8 @@ export const ItemsContainer = styled.div`
     flex-direction: column;
     justify-content: space-around;
     margin-top: 30px;
+`
+export const Nav = styled.div`
+    width: 10vw;
+    height: 100vh;
 `

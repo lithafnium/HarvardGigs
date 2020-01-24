@@ -21,8 +21,6 @@ exports.up = async knex => createTableIfNotExists(knex, 'users', table => {
   table
     .string('phoneNumber')
     .unique()
-    .notNullable()
-
   table.timestamp('createdAt').defaultTo(knex.fn.now())
 
   table.string('password').notNullable()

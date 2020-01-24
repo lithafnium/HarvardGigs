@@ -49,7 +49,7 @@ const Login = () => {
             <Title><span style = {{color: "#900c3f"}} >Login</span> to your account</Title>
             <Input placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
             <Input placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
-            <SignupButton>Login</SignupButton>
+            <SignupButton onClick = {login}>Login</SignupButton>
 
             <p style = {{textAlign: "center"}}>Need to make an account? <a href = "/register">Sign up</a></p>
           </InnerLogin>

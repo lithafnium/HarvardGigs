@@ -11,20 +11,20 @@ export const SideNavContainer = styled.div`
     overflow-x: hidden;
     transition: 0.5s;
     position:fixed;
-   
-    
+    text-decoration: none;
     margin:0;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);    
 
 `
 export const NavList = styled.ul`
+    text-decoration: none;
     list-style-type:none;
-   margin: 30px;
-  padding: 0;
-  width: 80px;
-  display:flex;
-  flex-direction: column;
-    
+    margin: 30px;
+    padding: 0;
+    width: 80px;
+    display:flex;
+    flex-direction: column;
+
 `
 
 export const NavHeader = styled.div`
@@ -42,7 +42,7 @@ export const NavListItem = styled.li`
     color:black;
     text-decoration:none;
     border-radius: 3px; 
-    width: 100%; 
+    width: 100vw; 
     transition: 0.2s; 
     
     &:hover{
@@ -93,14 +93,7 @@ export const NavOpenButton = styled.button`
     &:hover{
         cursor: pointer;
     }
-    
-    &:focus{
-        outline:none;
-        
-    }
-    &:hover{
-        cursor:pointer;
-    }
+
 `
 
 export const Bar = styled.p`

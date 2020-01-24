@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import genericProfilePic from '../Profile/Bio/genericProfilePic.jpeg';
+
 
 export const Font = styled.div`
      @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');  
@@ -8,10 +10,10 @@ export const Font = styled.div`
 
 export const NavBar = styled.div`
     background-color: #900c3f; 
-    width: 100%; 
+    width: 100vw; 
     display: flex; 
     padding-left: 50px;
-    padding: 10px 10px 10px 50px;  
+    padding: 10px 50px 0px 50px;  
     align-items: center; 
     
 `
@@ -105,6 +107,7 @@ export const CategoryItem = styled.span`
 export const SearchDiv = styled.div`
     display:flex;
     margin-left:80px;
+    margin-right: 80px;
     max-width: 900px;
     width: 100%; 
     height: 40px;
@@ -194,4 +197,16 @@ export const GigText = styled.p`
     margin:2px;
     font-family: 'Roboto', sans-serif;
     font-size:18px;
+`
+
+export const ProfilePic = styled.div`
+    width: 3.5vw;
+    height: 7vh;
+    border-radius: 50%; /*don't forget prefixes*/
+    background-image: url(${genericProfilePic});
+    background-position: center center;
+    /* as mentioned by Vad: */
+    background-size: cover;
+    display: flex;
+    justify-self: flex-end;
 `
