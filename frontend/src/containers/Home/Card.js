@@ -18,7 +18,7 @@ const Card = props => {
           </div>
         </IconContext.Provider>
         <h2 className="about-title">{props.title}</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, . </p>
+        <p>{props.text} </p>
       </AboutCard>
     )
   }
@@ -31,7 +31,7 @@ const Card = props => {
         </div>
       </IconContext.Provider>
       <h2 className="about-title">{props.title}</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,  </p>
+      <p>{props.text} </p>
     </RaisedAboutCard>
   )
 }

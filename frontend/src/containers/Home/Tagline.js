@@ -16,7 +16,8 @@ const Tagline = (props) => {
 	                        color: "#eeeeee"}}>Peer to Peer Marketplace</h1>
               <p style = {{marginBottom: "40px", 
                           fontSize: "1.2rem",
-                          color: "#eeeeee" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut porttitor leo a diam sollicitudin tempor id.</p>
+                          color: "#eeeeee" }}>
+                          We make selling and offering services faster and easier on campus. No need to post an instagram message on HarvardGigs.</p>
               <LearnMore>Learn More</LearnMore>
           </Heading>    
           <VideoImage>
