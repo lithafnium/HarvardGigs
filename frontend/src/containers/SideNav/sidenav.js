@@ -16,18 +16,18 @@ const SideNav = ({ navOpen, setNavOpen }) => {
     onCompleted: dat => console.log(dat)
   });
   
-  if (loading) return <h2>Loading</h2>
-  if (error) {
-    console.log(error);
-    return <h2>error</h2>
-  }
+  // if (loading) return <h2>Loading</h2>
+  // if (error) {
+  //   console.log(error);
+  //   return <h2>error</h2>
+  // }
   return (
     <div>
       <SideNavContainer id="sidenav" navOpen={navOpen}>
         <CloseButton navOpen={navOpen} setNavOpen={setNavOpen} />
         <NavList>
           <NavListItem>
-            <Link to="/profile">{`Hello, ${data.viewer.firstName} ${data.viewer.lastName}!`}</Link>
+            {/* <Link to="/profile">{`Hello, ${data.viewer.firstName} ${data.viewer.lastName}!`}</Link> */}
           </NavListItem>
           <NavListItem>
             <Link to="/">Home</Link>
