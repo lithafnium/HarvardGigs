@@ -1,7 +1,7 @@
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { GET_NAME_PROFILE } from './queries'
-import { Container, ProfilePic, Name, Email, AddButton } from './styles'
+import { Container, ProfilePic, Name, Email, AddButton, NavCloseButton, Link } from './styles'
 
 
 const Bio  = () => {
@@ -17,12 +17,14 @@ const Bio  = () => {
 
     return (
         <Container>
-                <ProfilePic />
-                <Name>{`${data.viewer.firstName} ${data.viewer.lastName}`}</Name>
-                <Email>{`${data.viewer.email}`}</Email>
-                <AddButton> Add item</AddButton>
-
-            </Container>
+            <Link to="/dashboard">
+                <NavCloseButton type="button" style={{paddingLeft: "15"}}>&times;</NavCloseButton>
+            </Link>
+            <ProfilePic />
+            <Name>{`${data.viewer.firstName} ${data.viewer.lastName}`}</Name>
+            <Email>{`${data.viewer.email}`}</Email>
+            <AddButton> Add item</AddButton>
+        </Container>
     )
 }
 export default Bio

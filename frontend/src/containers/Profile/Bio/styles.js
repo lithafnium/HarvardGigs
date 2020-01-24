@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import genericProfilePic from './genericProfilePic.jpeg';
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -12,7 +13,7 @@ export const Container = styled.div`
     position: relative;
     background-color: #900c3f;
     justify-content: flex-start;
-    padding-top: 40px;
+    padding-top: 20px;
     color: white;
 `
 export const ProfilePic = styled.div`
@@ -65,3 +66,30 @@ export const AddButton = styled.button`
     align-items: center;
 `
 
+export const Link = styled(NavLink)`
+    width: 40vw;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    text-decoration: none;
+`
+
+export const NavCloseButton = styled.button`
+    border:none;
+    background-color:transparent;
+    color: white;
+    font-size: 2rem; 
+    font-weight: bold;
+    padding-left: 15px;
+    text-decoration: none; 
+    &:focus{
+        outline: none; 
+    }
+
+    &:hover{
+        cursor: pointer;
+    }
+    align-self: flex-start;
+
+`
