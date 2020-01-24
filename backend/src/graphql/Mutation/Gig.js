@@ -11,12 +11,13 @@ const addGig = async (obj, { input }) => {
   }
 }
 
-const deleteGig = async (obj, { input }) => {
+const deleteGig = async (obj, { id }) => {
   try {
-    const deleteGig = await Gig.query().delete().where('id', `${input}`)
+    const deleteGig = await Gig.query().delete().where('id', id)
     return deleteGig
   } catch (err) {
-    throw new Error(`Could not delete Gig with id: ${JSON.stringify(input)}`)
+    console.log(err)
+    //throw new Error(`Could not delete Gig with id: ${JSON.stringify(input)}`)
   }
 }
 
