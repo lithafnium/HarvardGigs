@@ -1,30 +1,30 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import FilterBar from './filterbar'
 import Search from './search'
 import Gigs from './gigs'
-import { Container, RightContainer, navOpenButton, Font, NavBar, ProfilePic, Link, NavbarLink, SignupButton  } from './styles'
+import { Container, RightContainer, navOpenButton, Font, NavBar, ProfilePic, Link, NavbarLink, SignupButton } from './styles'
 import SideNavDiv from './sidenavdiv'
 import { NavLink } from 'react-router-dom'
 
 
 const Dashboard = () => {
 
-    const [searchText, setSearchText] = useState('')
-    const logout = () => localStorage.removeItem("token")
+  const [searchText, setSearchText] = useState('')
+  const logout = () => localStorage.removeItem("token")
 
-    return(
-    
+  return (
+
     <Font>
       <NavBar >
         <SideNavDiv />
-        <h1 style = {{color: "#fff"}}>YardSale</h1>
-        <Search setSearchText = {setSearchText} searchText = {searchText}/>
-          <NavLink to='./profile'>
-            <ProfilePic />
-          </NavLink>
-          <NavbarLink to="/login">
-            <SignupButton onClick={logout}>Log out</SignupButton>
-          </NavbarLink>
+        <h1 style={{ color: "#fff" }}>YardSale</h1>
+        <Search setSearchText={setSearchText} searchText={searchText} />
+        <NavLink to='./profile'>
+          <ProfilePic />
+        </NavLink>
+        <NavbarLink to="/login">
+          <SignupButton onClick={logout}>Log out</SignupButton>
+        </NavbarLink>
 
       </NavBar>
 
@@ -32,7 +32,7 @@ const Dashboard = () => {
 
         <RightContainer>
           <FilterBar />
-            <Gigs searchText = {searchText} />
+          <Gigs searchText={searchText} />
         </RightContainer>
 
       </Container>

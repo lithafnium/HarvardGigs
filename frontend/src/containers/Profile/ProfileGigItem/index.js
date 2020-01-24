@@ -3,7 +3,7 @@ import { GigItemDiv, GigImg, Price, GigText, Delete } from './styles'
 import { useMutation } from '@apollo/react-hooks'
 import { DELETE, GET_VIEW_GIGS } from './graphql'
 
-const PGigItem = ({ style, price, title, id }) => {
+const PGigItem = ({ style, price, title, id, photo }) => {
     const [deletegig, { loading, error}] = useMutation(DELETE, {
         variables: {
             id
@@ -17,9 +17,9 @@ const PGigItem = ({ style, price, title, id }) => {
     }
     return (
         <GigItemDiv style={style}>
-            <GigImg alt="sample" src="http://www.stonyelectrical.com/wp-content/uploads/2018/04/Product_Icon-300x300.png" />
+            <GigImg alt="sample" src={photo} />
             <Price>${price}</Price>
-            <GigText>${title}</GigText>
+            <GigText>{title}</GigText>
             <GigText>descrip</GigText>
             <Delete onClick={deletegig}>Delete</Delete>
         </GigItemDiv>

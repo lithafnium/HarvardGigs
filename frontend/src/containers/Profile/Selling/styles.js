@@ -25,4 +25,6 @@ export const ItemContainer = styled.div`
 `
 export const Title = styled.div`
     font-size: 50px;
+    padding-bottom: 10px;
 `
+

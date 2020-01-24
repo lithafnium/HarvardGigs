@@ -48,8 +48,8 @@ const Gigs = ({setSearchText, searchText}) => {
   <GigDiv>
     <GigsTitle>Shop</GigsTitle>
     <GigsContainer>
-    {renderG.map(({id, title, price, user}, index) => 
-                    <GigItem title = {title} price = {price} user = {user} />
+    {renderG.map(({id, title, price, user, photo}, index) => 
+                    <GigItem title = {title} price = {price} user = {user} photo={photo}/>
                 )}
      
 
